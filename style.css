@@ -495,16 +495,19 @@ nav a:hover {
 @media (max-width: 768px) {
    .group {
     display: grid;
-    grid-template-columns: repeat(2, 220px); /* 🔥 2 colunas */
-    grid-template-rows: auto;
-    justify-content: center;
+    grid-template-columns: repeat(1, 220px); /* 🔥 2 colunas */
+    width: max-content;
   }
 
-  .group img {
-  width: 220px;
+ .group img {
+  width: 100%;
+  max-width: 220px; /* 🔥 trava o tamanho máximo */
   height: 220px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto; /* 🔥 centraliza dentro da coluna */
 }
+
 
   .group .card:nth-child(n+7) {
     display: none;
