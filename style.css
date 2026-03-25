@@ -493,21 +493,20 @@ nav a:hover {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-   .group {
+  .group {
     display: grid;
     grid-template-columns: repeat(1, 400px); /* 🔥 2 colunas */
     width: max-content;
   }
 
  .group img {
-  width: 100%;
-  max-width: 1fr; /* 🔥 trava o tamanho máximo */
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto; /* 🔥 centraliza dentro da coluna */
-}
-
+    width: 100%;
+    max-width: 1fr; /* 🔥 trava o tamanho máximo */
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* 🔥 centraliza dentro da coluna */
+  }
 
   .group .card:nth-child(n+7) {
     display: none;
@@ -536,23 +535,23 @@ nav a:hover {
     margin-top: 10px;  
 }
 
-.header-social a {
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0);
-  color: #fff;
-  display: flex;  
-  margin-left: ;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: 0.5s;
-}
+  .header-social a {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    display: flex;  
+    margin-left: ;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.5s;
+  }
 
-.header-social a:hover {
-  background: var(--dourado);
-  color: #000;  
-  transition: 0.5s;
-} 
+  .header-social a:hover {
+    background: var(--dourado);
+    color: #000;  
+    transition: 0.5s;
+  } 
 
   nav {
     position: absolute;
@@ -587,7 +586,7 @@ nav a:hover {
   }
 
   .promocao h2, .cardapio h2 {
-    font-size: 3em;
+    font-size: 4em;
   }
 
   .localizacao-container {
