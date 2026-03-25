@@ -495,13 +495,13 @@ nav a:hover {
 @media (max-width: 768px) {
   .group {
     display: grid;
-    grid-template-columns: repeat(1, 220px); /* 🔥 2 colunas */
+    grid-template-columns: repeat(1, 300px); /* 🔥 2 colunas */
     width: max-content;
   }
 
  .group img {
     width: 100vh;
-    max-width: 220px; /* 🔥 trava o tamanho máximo */
+    max-width: 300px; /* 🔥 trava o tamanho máximo */
     height: 220px;
     object-fit: cover;
     display: block;
