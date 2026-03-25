@@ -250,8 +250,8 @@ nav a:hover {
 
 .track {
   display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
+  transition: transform 0.4s ease;
+  
 }
 
 .group {
@@ -495,18 +495,25 @@ nav a:hover {
 @media (max-width: 768px) {
   .group {
     display: grid;
-    grid-template-columns: repeat(2, 190px); /* 🔥 2 colunas */
-    width: max-content;
+    grid-template-columns: repeat(2, 200px); /* 🔥 2 colunas */
+    gap: 15x;
+
+    min-width: 100%;
   }
 
  .group img {
     width: 100vh;
-    max-width: 190px; /* 🔥 trava o tamanho máximo */
+    max-width: 200px; /* 🔥 trava o tamanho máximo */
     height: 220px;
     object-fit: cover;
     display: block;
     margin: 0 auto; /* 🔥 centraliza dentro da coluna */
   }
+
+  .carousel-wrapper {
+  overflow: hidden; /* 🔥 impede mostrar próximas */
+  width: 100%;
+}
 
   .group .card:nth-child(n+7) {
     display: none;
