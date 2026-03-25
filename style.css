@@ -500,8 +500,8 @@ nav a:hover {
   }
 
  .group img {
-    width: 100%;
-    max-width: 1fr; /* 🔥 trava o tamanho máximo */
+    width: 100vh;
+    max-width: 400px; /* 🔥 trava o tamanho máximo */
     height: 220px;
     object-fit: cover;
     display: block;
