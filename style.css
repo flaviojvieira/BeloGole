@@ -495,13 +495,13 @@ nav a:hover {
 @media (max-width: 768px) {
   .group {
     display: grid;
-    grid-template-columns: repeat(1, 400px); /* 🔥 2 colunas */
+    grid-template-columns: repeat(1, 220px); /* 🔥 2 colunas */
     width: max-content;
   }
 
  .group img {
     width: 100vh;
-    max-width: 400px; /* 🔥 trava o tamanho máximo */
+    max-width: 220px; /* 🔥 trava o tamanho máximo */
     height: 220px;
     object-fit: cover;
     display: block;
@@ -571,12 +571,12 @@ nav a:hover {
     display: flex;
   }
 
-   nav ul {
+  nav ul {
     flex-direction: column;
     gap: 20px;
   }
 
-    nav ul li a {
+  nav ul li a {
     color: #fff;
     font-size: 18px;
   }
@@ -586,11 +586,15 @@ nav a:hover {
   }
 
   .promocao h2, .cardapio h2 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .localizacao-container {
     flex-direction: column;
+  }
+
+  .local-img img {
+    padding-right: 10px;
   }
 
   .footer-container {
@@ -641,4 +645,3 @@ nav a:hover {
   
 }
 }
-
