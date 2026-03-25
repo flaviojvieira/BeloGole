@@ -495,7 +495,7 @@ nav a:hover {
 @media (max-width: 768px) {
    .group {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 🔥 2 colunas */
+    grid-template-columns: repeat(1, 400px); /* 🔥 2 colunas */
     width: max-content;
   }
 
