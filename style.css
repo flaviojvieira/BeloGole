@@ -494,10 +494,17 @@ nav a:hover {
 /* RESPONSIVO */
 @media (max-width: 768px) {
    .group {
-    grid-template-columns: repeat(2, 1fr); /* 🔥 2 colunas */
+    display: grid;
+    grid-template-columns: repeat(2, 220px); /* 🔥 2 colunas */
     grid-template-rows: auto;
     justify-content: center;
   }
+
+  .group img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
 
   .group .card:nth-child(n+7) {
     display: none;
