@@ -222,7 +222,7 @@ nav a:hover {
   padding: 80px 40px;
   text-align: center;
   background: #373435;
-  background: url('../../Recebido/menu7.png') center/cover no-repeat;   
+  background: url('menu7.png') center/cover no-repeat;   
 }
 
 .header-cardapio h2 {
@@ -586,7 +586,8 @@ nav a:hover {
   }
 
   .promocao h2, .cardapio h2 {
-    font-size: 3.5em;
+    font-size: 5em;
+    color: var(--dourado);
   }
 
   .localizacao-container {
