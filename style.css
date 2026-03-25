@@ -42,13 +42,14 @@ header.hidden {
 }
 
 .logo {
-  justify-self: start;
+  flex-shrink: 0;
 }
 
 
 .logo img {
-  height: 100px;
-  flex-shrink: 0;
+  width: 150px;
+  
+  height: auto;
 }
 
 nav {
@@ -603,9 +604,11 @@ nav a:hover {
     flex-direction: column;
   }
 
-  .local-img img {
-    padding-right: 10px;
-  }
+  .localizacao img { 
+  object-fit: contain;
+  flex-shrink: 0; /* 🔥 impede encolher no flex */
+  text-align: center;
+}
 
   .footer-container {
   grid-template-columns: 1fr; /* 🔥 tudo em coluna única */
