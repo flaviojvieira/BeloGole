@@ -170,7 +170,7 @@ nav a:hover {
   display: flex;
   gap: 70px;
   width: 100%;
-  animation: slide 6s linear infinite;
+  animation: slide 5s linear infinite;
   margin-top: 30px;
 }
 
@@ -495,13 +495,13 @@ nav a:hover {
 @media (max-width: 768px) {
    .group {
     display: grid;
-    grid-template-columns: repeat(1, 220px); /* 🔥 2 colunas */
+    grid-template-columns: repeat(1, 1fr); /* 🔥 2 colunas */
     width: max-content;
   }
 
  .group img {
   width: 100%;
-  max-width: 220px; /* 🔥 trava o tamanho máximo */
+  max-width: 1fr; /* 🔥 trava o tamanho máximo */
   height: 220px;
   object-fit: cover;
   display: block;
