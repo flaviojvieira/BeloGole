@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adega Belo Gole</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="../../Recebido/LOGO PNG.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="LOGO PNG.png" alt="Logo da Adega">
+  </div>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#promocao">Promoções</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#contato">Contato</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+
+  <div class="header-social">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Sofisticação em cada gole</h1>
+    <p>Descubra os melhores rótulos da região</p>
+    <a href="#cardapio" class="btn">Ver Cardápio</a>
+  </div>
+</section>
+
+<!-- PROMOCAO -->
+<section class="promocao" id="promocao">
+  <h2>Promoções da Semana</h2>
+
+  <div class="slider">    
+    <!-- DUPLICADO PRA LOOP -->    
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1527169402691-feff5539e52c')"><div class="info"><h4>Whisky Premium</h4><span>R$ 89,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+
+    <!-- DUPLICADO -->
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1527169402691-feff5539e52c')"><div class="info"><h4>Whisky Premium</h4><span>R$ 89,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+    <a href="#"><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1592861956120-e524fc739696')"><div class="info"><h4>Combo Festa</h4><span>R$ 119,90</span></div></div></a>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="cardapio" id="cardapio">
+  <div class="header-cardapio">
+    <h2>Nosso Cardápio</h2>
+  </div>
+
+  <div class="carousel">
+    <button class="nav-btn" onclick="prev()"><</button>
+
+    <div class="container">
+      <div class="track" id="track">
+
+        <!-- GRUPO 1 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+         <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+        </div>
+
+        <!-- GRUPO 2 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+        </div>
+
+        <!-- GRUPO 3 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1527169402691-feff5539e52c"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div></div>
+        </div>
+
+        <!-- GRUPO 4 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6"><div class="card-content"><h4>Vinho</h4><div class="price">R$ 59,90</div></div></div>
+        </div>
+
+        <!-- GRUPO 5 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div></div>
+        </div>
+
+        <!-- GRUPO 6 -->
+        <div class="group">
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+          <div class="card"><img src="https://images.unsplash.com/photo-1592861956120-e524fc739696"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="nav-btn" onclick="next()">></button>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="contato-box">
+
+    <h2>Faça seu pedido agora</h2>
+    <p>Entrega rápida • Bebidas geladas • Atendimento imediato</p>
+
+    <div class="beneficios">
+      <span>⚡ Resposta rápida</span>
+      <span>🍺 Sempre gelado</span>
+      <span>🚚 Entrega na sua porta</span>
+    </div>
+
+    <a href="https://wa.me/5511965081121?text=Olá,%20quero%20fazer%20um%20pedido!" 
+       class="whatsapp" target="_blank">
+       Pedir pelo WhatsApp
+    </a>
+
+  </div>
+    
+</section>
+
+<section class="localizacao" id="localizacao">
+
+  <div class="localizacao-container">
+
+    <!-- ESQUERDA (IMAGEM) -->
+    <div class="local-img">
+      <img src="LOGO PNG.png" alt="Frente da loja">
+      <p>Rua: Exemplo, 123 - Centro - Franco da Rocha <br><strong>Na mesma rua da ÚtilArt</strong></p>
+    </div>
+
+    <!-- DIREITA (MAPA) -->
+    <div class="local-mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234496.74321288412!2d-46.90918001441829!3d-23.315337446141896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cee6a7cb6f61eb%3A0xa321d69e795bf8a6!2sFranco%20da%20Rocha%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1774278593741!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LOGO / NOME -->
+    <div class="footer-box footer-logo">
+      <img src="LOGO PNG.png" alt="Logo da Adega">
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="footer-box">
+      <h4>Endereço</h4>
+      <p>Rua Exemplo, 123</p>
+      <p>Franco da Rocha - SP</p>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="footer-box">
+      <h4>Contato</h4>
+      <p>(11) 99999-9999</p>
+      <p>Atendimento todos os dias</p>
+    </div>
+
+    <!-- REDES SOCIAIS -->
+    <div class="footer-box">
+      <h4>Redes Sociais</h4>
+      <div class="social">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div> 
+
+  </div>
+
+  <div class="footer-bottom">
+    Adega Belo Gole CNPJ 000.000.0001/00 - ©2026 Todos os direitos reservados
+  </div>
+
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('nav');
+  const header = document.querySelector('header');
+
+  // MENU
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // SCROLL
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 50) {
+      header.classList.add('hidden');
+    } else {
+      header.classList.remove('hidden');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // 🔥 CAROUSEL LOOP REAL
+  const track = document.getElementById('track');
+  let slides = document.querySelectorAll('.group');
+
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  slides = document.querySelectorAll('.group');
+
+  let index = 1;
+  const total = slides.length;
+
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  function next() {
+    index++;
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function prev() {
+    index--;
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  track.addEventListener('transitionend', () => {
+    if (slides[index].isSameNode(firstClone)) {
+      track.style.transition = "none";
+      index = 1;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    if (slides[index].isSameNode(lastClone)) {
+      track.style.transition = "none";
+      index = slides.length - 2;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+</script>
+
+</body>
+</html>
