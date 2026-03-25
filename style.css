@@ -495,19 +495,21 @@ nav a:hover {
 @media (max-width: 768px) {
   .group {
     display: grid;
-    grid-template-columns: repeat(2, 200px); /* 🔥 2 colunas */
-    gap: 15x;
+    grid-template-columns: 200px 200px; 
+    gap: 15px;
 
+    justify-content: center;
     min-width: 100%;
   }
 
  .group img {
-    width: 100vh;
-    max-width: 200px; /* 🔥 trava o tamanho máximo */
+    width: 200px;
+   /* max-width: 200px;  🔥 trava o tamanho máximo */
+
     height: 220px;
     object-fit: cover;
-    display: block;
-    margin: 0 auto; /* 🔥 centraliza dentro da coluna */
+   /* display: block;
+    margin: 0 auto;  🔥 centraliza dentro da coluna */
   }
 
   .carousel-wrapper {
