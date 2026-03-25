@@ -42,14 +42,13 @@ header.hidden {
 }
 
 .logo {
-  flex-shrink: 0;
+  justify-self: start;
 }
 
 
 .logo img {
-  width: 150px;
-  
-  height: auto;
+  height: 100px;
+  flex-shrink: 0;
 }
 
 nav {
@@ -604,7 +603,8 @@ nav a:hover {
     flex-direction: column;
   }
 
-  .localizacao img { 
+  .localizacao img {
+ 
   object-fit: contain;
   flex-shrink: 0; /* 🔥 impede encolher no flex */
   text-align: center;
