@@ -493,40 +493,39 @@ nav a:hover {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
- .group {
+.group {  
   display: grid;
-  grid-template-columns: repeat(2, 200px);
-  grid-template-rows: repeat(3, 260px);
-  gap: 15px;
-  justify-content: center;
-
-  width: fit-content; /* 🔥 ESSENCIAL */
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-rows: repeat(3, 1fr);    /* 3 linhas */
+  gap: 4px;
+  justify-content: center;  
 }
 
- .group img {
-    width: 200px;
-   /* max-width: 200px;  🔥 trava o tamanho máximo */
-
-    height: 220px;
-    object-fit: cover;
-   /* display: block;
-    margin: 0 auto;  🔥 centraliza dentro da coluna */
-  }
-
-  .container {
+ .container {
   overflow: hidden;
-  width: 430px; /* 🔥 largura exata para 2 colunas */
-  margin: auto;
+  width: 100%; /* 🔥 largura exata para 2 colunas */
+  max-width: 100%;
+  margin: auto;  
 }
 
 .carousel {
   overflow: hidden;
 }
 
+.card {
+  width: 130px;
+  height: 260px;
+  aspect-ratio: 1/1;  
+  margin-bottom: 20px;
+}
 
+.card img {
+  width: 130px;
+  height: 200px;
+  object-fit: cover;  
+}
 
-  .group .card:nth-child(n+7) {
+  .group .card:nth-child(n+10) {
     display: none;
   }
 
