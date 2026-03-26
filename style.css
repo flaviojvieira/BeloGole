@@ -496,7 +496,7 @@ nav a:hover {
 .group {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  grid-template-rows: repeat(4, 1fr);    /* 🔥 4 linhas (mais espaço) */
+  
   gap: 10px;
 
   width: 100%;
@@ -514,10 +514,6 @@ nav a:hover {
   padding-right: 1px;
 }
 
-.carousel {
-  overflow: visible;
-}
-
 .card {
   width: 100%;
   height: 200px;
@@ -529,16 +525,8 @@ nav a:hover {
   height: 150px;  
 }
 
-  .group:not(:first-child) {
-  display: none;
-}
-
-.group .card:nth-child(n+13) {
-  display: none;
-}
-
-.nav-btn {
-  display: none;
+ .group .card:nth-child(n+13) {
+  display: none; 
 }
 
   h2 {
@@ -549,9 +537,9 @@ nav a:hover {
     padding: 10px 30px;
   }
 
-  .track {
-  display: block; /* 🔥 remove o efeito de slide */
-  transform: none !important;
+.track {
+  display: flex;
+  transition: transform 0.5s ease;
 }
 
  .menu-toggle {
