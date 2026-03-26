@@ -493,14 +493,16 @@ nav a:hover {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .group {
-    display: grid;
-    grid-template-columns: 200px 200px; 
-    gap: 15px;
+ .group {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(3, 260px);
+  gap: 15px;
+  justify-content: center;
 
-    justify-content: center;
-    min-width: 100%;
-  }
+  width: fit-content; /* 🔥 ESSENCIAL */
+  margin: 0 auto;
+}
 
  .group img {
     width: 200px;
@@ -512,10 +514,17 @@ nav a:hover {
     margin: 0 auto;  🔥 centraliza dentro da coluna */
   }
 
-  .carousel-wrapper {
-  overflow: hidden; /* 🔥 impede mostrar próximas */
-  width: 100%;
+  .container {
+  overflow: hidden;
+  width: 430px; /* 🔥 largura exata para 2 colunas */
+  margin: auto;
 }
+
+.carousel {
+  overflow: hidden;
+}
+
+
 
   .group .card:nth-child(n+7) {
     display: none;
