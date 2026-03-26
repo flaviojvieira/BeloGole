@@ -496,8 +496,8 @@ nav a:hover {
 .group {  
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-  grid-template-rows: repeat(3, 1fr);    /* 3 linhas */
-  gap: 4px;
+ /* grid-template-rows: repeat(3, 1fr);     3 linhas */
+  gap: 8px;
   justify-content: center;  
 }
 
@@ -513,14 +513,14 @@ nav a:hover {
 }
 
 .card {
-  width: 130px;
+  width: 100%;
   height: 260px;
   aspect-ratio: 1/1;  
   margin-bottom: 20px;
 }
 
 .card img {
-  width: 130px;
+  width: 100%;
   height: 200px;
   object-fit: cover;  
 }
@@ -609,6 +609,7 @@ nav a:hover {
 
   .localizacao-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .localizacao img {
