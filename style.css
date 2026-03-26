@@ -169,8 +169,8 @@ nav a:hover {
 .slider {
   display: flex;
   gap: 70px;
-  width: 100%;
-  animation: slide 5s linear infinite;
+  width: max-content;
+  animation: slide 25s linear infinite;
   margin-top: 30px;
 }
 
@@ -494,6 +494,7 @@ nav a:hover {
 /* RESPONSIVO */
 @media (max-width: 768px) {
 .group {
+  flex: 0 0 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   
@@ -617,11 +618,20 @@ nav a:hover {
     align-items: center;
   }
 
-  .localizacao img {
- 
-  object-fit: contain;
-  flex-shrink: 0; /* 🔥 impede encolher no flex */
+.local-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centraliza tudo */
+}
+
+.local-img img {
+  width: 50%; /* ou 100% se quiser maior */
+  margin-left: 0; /* 🔥 remove o erro */
+}
+
+.local-img p {
   text-align: center;
+  margin-top: -5px;
 }
 
   .footer-container {
