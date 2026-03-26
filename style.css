@@ -508,6 +508,11 @@ nav a:hover {
   margin: auto;  
 }
 
+.cardapio {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
 .carousel {
   overflow: hidden;
 }
