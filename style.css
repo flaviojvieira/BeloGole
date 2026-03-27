@@ -383,7 +383,7 @@ nav a:hover {
 }
 
 /* BOTÃO HAMBURGUER */
-.menu-toggle {
+.menu-toggle {  
   display: none;
   font-size: 40px; /* 🔥 maior */
   color: #fff;
@@ -393,6 +393,7 @@ nav a:hover {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1100;
+  
 }
 
 .menu-toggle:hover {
@@ -495,10 +496,8 @@ nav a:hover {
 .group {
   flex: 0 0 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */   
   gap: 10px;
-
   width: 100%;
 }
 
@@ -514,9 +513,16 @@ nav a:hover {
   padding-right: 1px;
 }
 
+.group p {
+  grid-column: 1 / -1;
+  font-size: 2em;  
+  font-family: "Playball", cursive;  
+  border-radius: 5px;
+}
+
 .card {
   width: 100%;
-  height: 200px;
+  height: 210px;
   aspect-ratio: 1/1;
 }
 
@@ -525,7 +531,7 @@ nav a:hover {
   height: 150px;  
 }
 
- .group .card:nth-child(n+13) {
+ .group .card:nth-child(n8) {
   display: none; 
 }
 
@@ -544,7 +550,7 @@ nav a:hover {
 
  .menu-toggle {
     display: block;
-    font-size: 35px;
+    font-size: 50px;
     color: #fff;
     cursor: pointer;
   }   
@@ -670,9 +676,19 @@ nav a:hover {
 
 @media (min-width: 769px) {
   .group {
-    grid-template-columns: repeat(4, 280px);
-    grid-template-rows: repeat(2, auto);
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */     
+  gap: 10px;
+  width: 100%;
   }
+
+.group p {
+  grid-column: 1 / -1;
+  font-size: 3em;  
+  font-family: "Playball", cursive;  
+  border-radius: 5px;
+}
 
   .header-social {
     position: fixed;
