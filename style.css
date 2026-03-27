@@ -464,6 +464,32 @@ nav a:hover {
   opacity: 0.7;
 }
 
+/* BOTÃO WHATSAPP FLUTUANTE */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 2000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+/* HOVER */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
 .group {
@@ -623,6 +649,14 @@ nav a:hover {
     display: block;
   }
 }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+    bottom: 20px;
+    right: 20px;
+  }
 
 @media (max-width: 1000px) {
   header {
