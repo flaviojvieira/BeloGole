@@ -158,12 +158,13 @@ nav a:hover {
   overflow: hidden; 
 }
 
-.promocao h2 {
+.promocao h2, .header-cardapio h2, .local-mapa h2 {
   font-family: "Playball", cursive;
   font-weight: 500;
   font-size: 80px;
   font-style: normal;
   color: var(--dourado);
+  text-align: center;
 }
 
 .slider {
@@ -223,15 +224,6 @@ nav a:hover {
   text-align: center;
   background: #373435;
   background: url('menu7.png') center/cover no-repeat;   
-}
-
-.header-cardapio h2 {
-  font-family: "Playball", cursive;
-  font-weight: 500;
-  font-size: 100px;
-  font-style: normal;
-  color: white;
-  margin-bottom: 30px;
 }
 
 .carousel {
@@ -368,34 +360,14 @@ nav a:hover {
   transform: scale(1.08);
 }
 
-.localizacao {
+.localizacao { 
+  text-align: center;  
   padding: 80px 20px;
   background-color: black;
   border-top: 1px solid white;
 }
 
-.localizacao-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.local-img, .local-mapa {
-  flex: 1;
-}
-
-.local-img img {
-  width: 50%;
-  height: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-left: 110px;
-}
-
-.local-img p {
+.local-mapa p {
   text-align: center;
   color: var(--dourado);
   opacity: 0.8;
@@ -403,8 +375,9 @@ nav a:hover {
 }
 
 .local-mapa iframe {
-  width: 100%;
+  width: 60%;
   height: 400px;
+  
   border: none;
   border-radius: 12px;
 }
@@ -608,30 +581,20 @@ nav a:hover {
     font-size: 20px;
   }
 
-  .promocao h2, .cardapio h2 {
-    font-size: 4em;
-    color: var(--dourado);
-  }
-
-  .localizacao-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-.local-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 🔥 centraliza tudo */
-}
-
-.local-img img {
-  width: 50%; /* ou 100% se quiser maior */
-  margin-left: 0; /* 🔥 remove o erro */
-}
-
-.local-img p {
+  .promocao h2, .cardapio h2, .local-mapa h2 {
+    font-family: "Playball", cursive;
+  font-weight: 500;
+  font-size: 80px;
+  font-style: normal;
+  color: var(--dourado);
   text-align: center;
-  margin-top: -5px;
+  }
+
+  .local-mapa iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 12px;
 }
 
   .footer-container {
@@ -650,12 +613,12 @@ nav a:hover {
    .footer-logo {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     width: 100%;
   }
 
   .footer-logo img {
-    width: 180px;
+    width: 130px;
     margin: 0 auto;
     display: block;
   }
