@@ -300,34 +300,37 @@ nav a:hover {
 }
 
 /* CONTATO */
-.contato {
-  padding: 100px 20px;
+.contato-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: black;  
-  border-top: 1px solid white;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 40px 0;
 }
 
 .contato-box {
   background: black;
   backdrop-filter: blur(12px);
-  padding: 40px;
+  
   border-radius: 20px;
   text-align: center;
   max-width: 500px;
-  width: 100%;
-  border: 1px solid var(--dourado);
+  width: 450px;
+  height: 300px;
+  border: 1px solid var(--dourado);  
+  
 }
+
+.contato-box p {
+  opacity: 0.8;
+  margin-bottom: 10px;  
+}
+
+
 
 .contato h2 {
   font-size: 32px;
   margin-bottom: 10px;
-}
-
-.contato p {
-  opacity: 0.8;
-  margin-bottom: 25px;
 }
 
 .beneficios {
@@ -690,8 +693,31 @@ nav a:hover {
   border-radius: 5px;
 }
 
+.contato-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  padding: 40px 0; 
+   
+}
+
+.contato-box {
+  background: black;
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 450px;  
+  border: 1px solid var(--dourado);  
+  line-height: 30px;  
+}
   .header-social {
-    position: fixed;
-  
+    position: fixed;  
+}
+
+#informacoes {
+  margin-top: 0px;
 }
 }
