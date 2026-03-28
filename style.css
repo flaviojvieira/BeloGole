@@ -134,7 +134,8 @@ nav a:hover {
   font-weight: 300;
 }
 
-.btn {
+.btn {  
+  margin-top: -50px; 
   padding: 14px 34px;
   background: linear-gradient(135deg, #F1A134, #FEC966);
   color: #000;
@@ -145,13 +146,16 @@ nav a:hover {
 }
 
 .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(241,161,52,0.5);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-color: var(--dourado);
+  font-size: 1.1em;
 }
 
 /* PROMOÇÕES */
 .promocao {  
-  padding: 80px 40px;
+  text-align;
+  padding: 40px 40px;
   text-align: center;
   background-color: #f3f3f3;
   color: var(--dourado); 
@@ -173,6 +177,11 @@ nav a:hover {
   width: max-content;
   animation: slide 25s linear infinite;
   margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.slider:hover {
+  animation-play-state: paused;
 }
 
 .slide {  
@@ -216,6 +225,104 @@ nav a:hover {
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* POPUP PROMOÇÕES */
+
+.popup-promocoes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-promocoes.active {
+  display: flex;
+}
+
+.popup-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 100vh;
+  max-height: 870px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h2 {
+  font-size: 2.5em;
+  font-family: "Playball", cursive;
+  margin-bottom: 20px;
+  color: var(--dourado);
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  gap: 20px;
+}
+
+.popup-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.popup-card h4 {
+  margin-top: 10px;
+}
+
+.popup-card span {
+  color: var(--dourado);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* BOTÃO */
+.whatsapp-btn-card {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.whatsapp-btn-card:hover {
+  transform: scale(1.05);
+}
+
+/* botão fechar */
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 /* CARDÁPIO */
@@ -303,7 +410,7 @@ nav a:hover {
 .contato-wrapper {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 30px;  
   flex-wrap: wrap;
   padding: 40px 0;
 }
@@ -315,7 +422,7 @@ nav a:hover {
   text-align: center;
   max-width: 500px;
   width: 440px;
-  height: 100%;
+  height: 300px;
   border: 1px solid var(--dourado);  
   padding-bottom: 20px;
 }
@@ -324,8 +431,6 @@ nav a:hover {
   opacity: 0.8;
   margin-bottom: 10px;  
 }
-
-
 
 .contato h2 {
   font-size: 32px;
@@ -348,14 +453,15 @@ nav a:hover {
 }
 
 .whatsapp {
+  margin-top: -15px;
   display: inline-block;
-  padding: 16px 36px;
+  padding: 10px 36px;
   background: linear-gradient(135deg, #F1A134, #FEC966);
   color: #000;
   font-weight: 700;
   text-decoration: none;
   border-radius: 30px;
-  transition: 0.3s;
+  transition: 0.3s;  
 }
 
 .whatsapp:hover {
@@ -485,12 +591,63 @@ nav a:hover {
   z-index: 2000;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: 0.3s;
+  animation: pulse 1.5s infinite;
 }
 
 /* HOVER */
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 80vh;
+  width: 90%;
+  border: 1px solid var(--dourado);
+  position: relative;
+  overflow: auto;
+}
+
+.popup-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.popup-content h3 {
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  color: var(--dourado);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 /* RESPONSIVO */
@@ -552,7 +709,7 @@ nav a:hover {
 
  .menu-toggle {
     display: block;
-    font-size: 70px;
+    font-size: 50px;
     color: #fff;
     cursor: pointer;  
   }   
@@ -624,6 +781,18 @@ nav a:hover {
     text-align: center;
   } 
 
+  .whatsapp {
+  margin-top: -15px;
+  display: inline-block;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;  
+}
+
   .local-mapa iframe {
   width: 100%;
   height: 400px;
@@ -664,6 +833,10 @@ nav a:hover {
     font-size: 26px;
     bottom: 20px;
     right: 20px;
+  } 
+
+  .popup-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   }
 
 @media (max-width: 1000px) {
@@ -675,7 +848,6 @@ nav a:hover {
     gap: 15px;
   }
 } 
-
 @media (min-width: 769px) {
   .group {
   flex: 0 0 100%;
@@ -709,7 +881,7 @@ nav a:hover {
   text-align: center;
   max-width: 500px;
   width: 450px; 
-  height: 100%; 
+  height: 350px; 
   border: 1px solid var(--dourado);  
   line-height: 30px;  
 }
@@ -717,3 +889,6 @@ nav a:hover {
     position: fixed;  
 }
 }
+
+
+
