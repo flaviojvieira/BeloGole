@@ -254,7 +254,7 @@ nav a:hover {
   border-radius: 15px;
   width: 90%;
   max-width: 100vh;
-  max-height: 600px;
+  max-height: 700px;
   text-align: center;
   position: relative;
 }
@@ -839,6 +839,17 @@ nav a:hover {
 
   .popup-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+
+  .popup-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 100vh;
+    max-height: 550px;
+    text-align: center;
+    position: relative;
   }
 
 @media (max-width: 1000px) {
