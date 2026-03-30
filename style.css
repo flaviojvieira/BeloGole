@@ -121,8 +121,8 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 650;
   letter-spacing: 1px;
   margin-bottom: 20px; /* adiciona espaço abaixo do título */
 }
@@ -370,6 +370,7 @@ nav a:hover {
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(255,255,255,0.05);
+  height: 350px;
 }
 
 .card:hover {
@@ -380,7 +381,7 @@ nav a:hover {
 
 .card img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
   display: block; /* 👈 remove espaçamento estranho */
 }
@@ -653,7 +654,7 @@ nav a:hover {
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
+@media (max-width: 768px) {  
 .group {
   flex: 0 0 100%;
   display: grid;
@@ -683,13 +684,13 @@ nav a:hover {
 
 .card {
   width: 100%;
-  height: 210px;
+  height: 350px;
   aspect-ratio: 1/1;
 }
 
 .card img {
   width: 100%;
-  height: 150px;  
+  height: 250px;  
 }
 
  .group .card:nth-child(n8) {
