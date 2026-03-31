@@ -25,7 +25,7 @@ header {
   display: grid;
   grid-template-columns: auto 1fr auto; /* logo | menu | redes */
   align-items: center;
-  transition: transform 0,3s ease;
+  transition: transform 0.3s ease;
   padding: 10px 150px;
   background: rgba(0,0,0,0.3);
   position: fixed;
@@ -98,7 +98,7 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('fachada.png') no-repeat center/cover;
+  background: url('fachada5.png') no-repeat center/cover;
   background-attachment: fixed;
   display: flex;
   justify-content: center;
@@ -112,7 +112,7 @@ nav a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
 }
 
 .hero-content {
@@ -154,7 +154,7 @@ nav a:hover {
 
 /* PROMOÇÕES */
 .promocao {  
-  text-align;
+  text-align: center;
   padding: 40px 40px;
   text-align: center;
   background-color: #f3f3f3;
@@ -299,7 +299,7 @@ nav a:hover {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
-}
+}  
 
 /* BOTÃO */
 .whatsapp-btn-card {
@@ -307,11 +307,12 @@ nav a:hover {
   padding: 8px 16px;
   background: linear-gradient(135deg, #F1A134, #FEC966);
   color: #000;
-  font-weight: 600;
+  font-weight: bold;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.1em;
   transition: 0.3s;
+  width: 94%;
 }
 
 .whatsapp-btn-card:hover {
@@ -350,24 +351,32 @@ nav a:hover {
 
 .container {
   overflow: hidden;
-  width: 100%;  
-  
+  width: 100%;   
   margin: auto;
 }
 
 .track {
   display: flex;
-  transition: transform 0.4s ease;
-  
+  transition: transform 0.4s ease;  
 }
 
 .group {
   flex: 0 0 100%;
-  padding: 20px;
-
   display: grid;
   justify-content: center; /* 🔥 centraliza o grid */
   gap: 20px;
+  padding: 10px;   
+}
+
+.group a {  
+  width: 94%; /* 🔥 ocupa todo o card */
+  margin: auto;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;  
+  transition: 0.3s;
 }
 
 .card {    
@@ -376,7 +385,7 @@ nav a:hover {
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(255,255,255,0.05);
-  height: 350px;
+  height: 600px;    
 }
 
 .card:hover {
@@ -387,14 +396,15 @@ nav a:hover {
 
 .card img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block; /* 👈 remove espaçamento estranho */
+  height: 500px; /* 🔥 remove corte */
+  display: block;
 }
 
 .card-content {
-  padding: 10px;
+  padding: 5px;
 }
+
+
 
 .price {
   color: var(--dourado);
@@ -664,7 +674,27 @@ nav a:hover {
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
+
+.hero {  
+  background: url('fachada4.png') no-repeat center/cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+
 .group {
   flex: 0 0 100%;
   display: grid;
@@ -740,8 +770,7 @@ nav a:hover {
     height: 30px;
     background: rgba(0, 0, 0, 0);
     color: #fff;
-    display: flex;  
-    margin-left: ;
+    display: flex;     
     border-radius: 50%;
     text-decoration: none;
     transition: 0.5s;
@@ -864,8 +893,17 @@ nav a:hover {
     max-height: 500px; /* 🔥 limite leve */
     object-fit: contain; /* 🔥 imagem inteira */
   }
+  @media (max-width: 1000px) {
 
-@media (max-width: 1000px) {
+    .hero {  
+  background: url('fachada4.png') no-repeat center/cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
   header {
     padding: 10px 30px;
   }
@@ -873,8 +911,20 @@ nav a:hover {
   nav {
     gap: 15px;
   }
+
+ .card {
+  width: 100%;
+  height: 350px;
+  aspect-ratio: 1/1;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;  
+}
 } 
 @media (min-width: 769px) {
+
   .group {
   flex: 0 0 100%;
   display: grid;
