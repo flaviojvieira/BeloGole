@@ -316,6 +316,10 @@ nav a:hover {
   width: 94%;
 }
 
+.whatsapp-btn-card {
+  padding: 5px;  
+}
+
 .whatsapp-btn-card:hover {
   transform: scale(1.05);
 }
@@ -376,9 +380,9 @@ nav a:hover {
   color: #000;
   text-align: center;
   font-weight: bold;
-  font-size: 1.1em;  
+  font-size: 1em;  
   transition: 0.3s;
-  margin-bottom: 10px;
+  margin-bottom: 10px;  
 }
 
 .card {    
