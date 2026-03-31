@@ -98,7 +98,7 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1510626176961-4b57d4fbad03') no-repeat center/cover;
+  background: url('fachada.png') no-repeat center/cover;
   background-attachment: fixed;
   display: flex;
   justify-content: center;
@@ -187,7 +187,7 @@ nav a:hover {
 .slide {  
   min-width: 250px;
   height: 250px;
-  background-size: cover;
+  background-size: contain;
   border-radius: 10px;
   position: relative;
   transition: transform 0.3s ease;  
@@ -229,8 +229,7 @@ nav a:hover {
 
 /* POPUP PROMOÇÕES */
 
-.popup-promocoes {
-  
+.popup-promocoes {  
   margin-top: 50px;
   position: fixed;
   top: 0;
@@ -250,12 +249,19 @@ nav a:hover {
 
 .popup-content {
   background: #111;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
-  width: 90%;
-  max-width: 100vh;
-  max-height: 700px;
   text-align: center;
+
+  max-width: 320px; /* 🔥 menor */
+  width: 90%;
+
+  max-height: 90vh; /* 🔥 nunca ultrapassa tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid var(--dourado);
   position: relative;
 }
 
@@ -406,7 +412,7 @@ nav a:hover {
 
 .nav-btn:hover {
   color: var(--dourado); /* 👈 efeito premium */
-  transform: scale(1.2);
+ transform: scale(1.2);
 }
 
 /* CONTATO */
@@ -468,7 +474,7 @@ nav a:hover {
 }
 
 .whatsapp:hover {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 
 .localizacao { 
@@ -627,12 +633,16 @@ nav a:hover {
   border: 1px solid var(--dourado);
   position: relative;
   overflow: auto;
+  
 }
 
 .popup-content img {
   width: 100%;
+  height: 370px;
+  object-fit: cover; /* 🔥 mostra imagem inteira */
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  background-color: #000;
 }
 
 .popup-content h3 {
@@ -843,14 +853,16 @@ nav a:hover {
   }
 
   .popup-content {
-    background: #111;
-    padding: 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 100vh;
-    max-height: 550px;
-    text-align: center;
-    position: relative;
+    height: auto; /* 🔥 deixa crescer naturalmente */
+    max-height: 90vh;
+    padding: 15px;
+  }
+
+  .popup-content img {
+    width: 100%;
+    height: auto; /* 🔥 NÃO força altura */
+    max-height: 500px; /* 🔥 limite leve */
+    object-fit: contain; /* 🔥 imagem inteira */
   }
 
 @media (max-width: 1000px) {
