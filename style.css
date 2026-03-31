@@ -49,6 +49,7 @@ header.hidden {
 .logo img {
   height: 100px;
   flex-shrink: 0;
+  padding-right: 50px;
 }
 
 nav {
@@ -98,7 +99,7 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('fachada5.png') no-repeat center/cover;
+  background: url('fachada4.png') no-repeat center/cover;
   background-attachment: fixed;
   display: flex;
   justify-content: center;
@@ -112,7 +113,7 @@ nav a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.6);
 }
 
 .hero-content {
@@ -377,6 +378,7 @@ nav a:hover {
   font-weight: bold;
   font-size: 1.1em;  
   transition: 0.3s;
+  margin-bottom: 10px;
 }
 
 .card {    
@@ -385,7 +387,7 @@ nav a:hover {
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(255,255,255,0.05);
-  height: 600px;    
+  height: auto;    
 }
 
 .card:hover {
@@ -396,7 +398,7 @@ nav a:hover {
 
 .card img {
   width: 100%;
-  height: 500px; /* 🔥 remove corte */
+  height: auto; /* 🔥 remove corte */
   display: block;
 }
 
@@ -676,9 +678,12 @@ nav a:hover {
 /* RESPONSIVO */
 @media (max-width: 768px) {
 
-.hero {  
+  .hero {
+  height: 100vh;
   background: url('fachada4.png') no-repeat center/cover;
   background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -686,13 +691,12 @@ nav a:hover {
   position: relative;
 }
 
-
 .hero::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.6);
 }
 
 .group {
@@ -721,18 +725,6 @@ nav a:hover {
   font-family: "Playball", cursive;  
   border-radius: 5px;
 }
-
-.card {
-  width: 100%;
-  height: 350px;
-  aspect-ratio: 1/1;
-}
-
-.card img {
-  width: 100%;
-  height: 250px;  
-}
-
  .group .card:nth-child(n8) {
   display: none; 
 }
@@ -895,15 +887,6 @@ nav a:hover {
   }
   @media (max-width: 1000px) {
 
-    .hero {  
-  background: url('fachada4.png') no-repeat center/cover;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
   header {
     padding: 10px 30px;
   }
@@ -912,16 +895,22 @@ nav a:hover {
     gap: 15px;
   }
 
- .card {
-  width: 100%;
-  height: 350px;
-  aspect-ratio: 1/1;
+  .card {    
+  background: linear-gradient(145deg, #2c2a2b, #1f1f1f);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  height: auto;    
 }
 
 .card img {
   width: 100%;
-  height: 250px;  
+  height: auto; /* 🔥 remove corte */
+  display: block;
 }
+
+
 } 
 @media (min-width: 769px) {
 
