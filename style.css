@@ -47,8 +47,8 @@ header.hidden {
 
 
 .logo img {
-  height: 200px;  
-  margin: -45px;  
+  height: 150px;  
+  margin: -25px;  
   flex-shrink: 0;
   padding-right: 50px;
 }
