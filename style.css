@@ -893,11 +893,17 @@ nav a:hover {
   @media (max-width: 1000px) {
 
   header {
-    padding: 10px 30px;
+    padding:  00px;    
   }
-
+  
+  .header-social {
+    margin-left: 0px ;
+    gap: 1px;
+  }
+  
   nav {
     gap: 15px;
+    margin-left: -40px;
   }
 
   .card {    
