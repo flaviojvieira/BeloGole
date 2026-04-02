@@ -303,7 +303,7 @@ nav a:hover {
   margin-bottom: 10px;
 }  
 
-/* BOTÃO */
+/* BOTÃO POPUP PROMOÇÕES*/
 .whatsapp-btn-card {
   display: inline-block;
   padding: 8px 16px;
@@ -312,7 +312,7 @@ nav a:hover {
   font-weight: bold;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1em;
   transition: 0.3s;
   width: 94%;
 }
