@@ -122,9 +122,9 @@ nav a:hover {
   z-index: 1;
 }
 
-.hero h1 {
+.hero h1 {  
   font-size: 50px;
-  font-weight: 650;
+  font-weight: 650px;
   letter-spacing: 1px;
   margin-bottom: 20px; /* adiciona espaço abaixo do título */
 }
