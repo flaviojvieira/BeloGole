@@ -188,7 +188,7 @@ nav a:hover {
 
 .slide {  
   min-width: 250px;
-  height: 250px;
+  height: 260px;
   background-size: contain;
   border-radius: 10px;
   position: relative;
@@ -284,12 +284,13 @@ nav a:hover {
   background: #1a1a1a;
   padding: 10px;
   border-radius: 10px;
-  text-align: center;
+  text-align: center; 
 }
 
 .popup-card img {
   width: 100%;
   border-radius: 8px;
+  
 }
 
 .popup-card h4 {
