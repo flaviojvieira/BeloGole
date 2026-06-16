@@ -101,7 +101,7 @@ nav a:hover {
 .hero {
   height: 100vh;
   background: url('fachada4.png') no-repeat center/cover;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +175,7 @@ nav a:hover {
 
 .slider {
   display: flex;
-  gap: 70px;
+  gap: 00px;
   width: max-content;
   animation: slide 25s linear infinite;
   margin-top: 30px;
@@ -188,6 +188,7 @@ nav a:hover {
 
 .slide {  
   min-width: 250px;
+  margin-right:20px;
   height: 260px;
   background-size: contain;
   border-radius: 10px;
@@ -226,7 +227,7 @@ nav a:hover {
 
 @keyframes slide {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-20%); }
 }
 
 /* POPUP PROMOÇÕES */
@@ -388,6 +389,8 @@ nav a:hover {
 }
 
 .card {    
+  max-width: auto;
+    margin: 0 auto;
   background: linear-gradient(145deg, #2c2a2b, #1f1f1f);
   border-radius: 12px;
   overflow: hidden;
@@ -686,7 +689,6 @@ nav a:hover {
    DESKTOP
 ========================= */
 @media (min-width: 768px) {
-
   .group {
     flex: 0 0 100%;
     display: grid;
@@ -732,7 +734,6 @@ nav a:hover {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-
   .hero {
     height: 100vh;
     background: url('fachada4.png') no-repeat center/cover;
@@ -797,7 +798,6 @@ nav a:hover {
     display: flex;
     transition: transform 0.5s ease;
   }
-
   .menu-toggle {
     display: block;
     font-size: 50px;
@@ -937,36 +937,3 @@ nav a:hover {
     object-fit: contain;
   }
 }
-
-  
-@media (max-width: 1000px) {
-
-header {
-  padding:  00px;    
-}
-
-.header-social {
-  margin-left: 0px ;
-  gap: 1px;
-}
-
-nav {
-  gap: 15px;
-  margin-left: -40px;
-}
-
-.card {    
-  background: linear-gradient(145deg, #2c2a2b, #1f1f1f);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.05);
-  height: auto;    
-}
-
-.card img {
-  width: 100%;
-  height: auto; /* 🔥 remove corte */
-  display: block;
-}
-} 
