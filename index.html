@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adega Belo Gole</title>
+  <title>Adega Belo Gole — Bebidas geladas com entrega rápida</title>
+  <meta name="description" content="Adega Belo Gole em Franco da Rocha. Cervejas, drinks, combos e destilados com entrega rápida na sua porta. Peça pelo WhatsApp!">
+  <meta property="og:title" content="Adega Belo Gole">
+  <meta property="og:description" content="Bebidas geladas na sua porta em minutos. Franco da Rocha e região.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
 
-  <link rel="stylesheet" href="style.css">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playball&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo3.png" alt="Logo da Adega">
+    <img src="logo3.png" alt="Logo da Adega Belo Gole">
   </div>
 
   <nav>
-    <a href="#">Início</a>
+    <a href="#top">Início</a>
     <a href="#promocao">Promoções</a>
     <a href="#cardapio">Cardápio</a>
     <a href="#contato">Contato</a>
@@ -31,604 +33,143 @@
   </nav>
 
   <div class="header-social">
-    <a href="#"><i class="fab fa-instagram"></i></a>    
-    <a href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" data-link="whatsapp-pedido" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
 
-  <div class="menu-toggle" id="menu-toggle">
-    ☰
-  </div>
+  <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button">☰</div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-content">
     <h1>Bebidas geladas na sua porta em minutos</h1>
     <p>
-      📍 Franco da Rocha e região
+      📍 Franco da Rocha e região<br>
       ⏱️ Entrega rápida
     </p>
     <a href="#cardapio" class="btn">Ver Cardápio</a>
   </div>
 </section>
 
-<!-- PROMOCAO -->
 <section class="promocao" id="promocao">
   <h2>Promoções</h2>
-
-  <div class="slider">    
-    <!-- DUPLICADO PRA LOOP -->    
-    <a href="#"><div class="slide" style="background-image:url('chequemate3.png')"><div class="info"><h4>Cheque Mate</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('combo2.png')"><div class="info"><h4>Combo</h4><span>R$ 189,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('longneck.png')"><div class="info"><h4>Long Neck</h4><span>R$ 17,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('drinks.png')"><div class="info"><h4>Drinks</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('campari.png')"><div class="info"><h4>Campari</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('vodka.png')"><div class="info"><h4>Vodka</h4><span>R$ 119,90</span></div></div></a>
-
-    <a href="#"><div class="slide" style="background-image:url('chequemate3.png')"><div class="info"><h4>Cheque Mate</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('combo2.png')"><div class="info"><h4>Combo</h4><span>R$ 189,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('longneck.png')"><div class="info"><h4>Long Neck</h4><span>R$ 17,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('drinks.png')"><div class="info"><h4>Drinks</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('campari.png')"><div class="info"><h4>Campari</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('vodka.png')"><div class="info"><h4>Vodka</h4><span>R$ </span></div></div></a> 
-
-     <a href="#"><div class="slide" style="background-image:url('chequemate3.png')"><div class="info"><h4>Cheque Mate</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('combo2.png')"><div class="info"><h4>Combo</h4><span>R$ 189,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('longneck.png')"><div class="info"><h4>Long Neck</h4><span>R$ 17,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('drinks.png')"><div class="info"><h4>Drinks</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('campari.png')"><div class="info"><h4>Campari</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('vodka.png')"><div class="info"><h4>Vodka</h4><span>R$ </span></div></div></a> 
-
-     <a href="#"><div class="slide" style="background-image:url('chequemate3.png')"><div class="info"><h4>Cheque Mate</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('combo2.png')"><div class="info"><h4>Combo</h4><span>R$ 189,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('longneck.png')"><div class="info"><h4>Long Neck</h4><span>R$ 17,00</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('drinks.png')"><div class="info"><h4>Drinks</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('campari.png')"><div class="info"><h4>Campari</h4><span>R$</span></div></div></a>
-    <a href="#"><div class="slide" style="background-image:url('vodka.png')"><div class="info"><h4>Vodka</h4><span>R$ </span></div></div></a> 
-
-    
-  </div>
-
+  <div class="slider" id="slider"></div>
   <a href="#" class="btn" id="abrirPromocoes">Ver todas promoções</a>
 </section>
 
-<!-- CARDÁPIO -->
 <section class="cardapio" id="cardapio">
   <div class="header-cardapio">
     <h2>Cardápio</h2>
   </div>
 
   <div class="carousel">
-    <button class="nav-btn" onclick="prev()"><</button>
-
+    <button class="nav-btn" id="btn-prev" aria-label="Categoria anterior">&lt;</button>
     <div class="container">
-      <div class="track" id="track">
-        
-        <!-- GRUPO 1 -->
-         
-        <div class="group">     
-            <p>Cerveja</p>   
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div> <a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir
-          </a></div>
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div> <a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div> 
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div> <a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div> 
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div> <a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div> 
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div> <a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div> 
-          <div class="card"><img src="cervejas.png"><div class="card-content"><h4>Cerveja</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>         
-        </div>
-
-        <!-- GRUPO 2 -->
-        <div class="group">
-          <p>Combo</p> 
-          <div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-          <div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="combo.png"><div class="card-content"><h4>Combo</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-        </div>
-        
-
-        <!-- GRUPO 3 -->
-        <div class="group">
-          <p>Wisky</p>
-          <div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-          <div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="wisky.png"><div class="card-content"><h4>Whisky</h4><div class="price">R$ 89,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-        </div>
-
-        <!-- GRUPO 4 -->
-        <div class="group">
-          <p>Copão</p>
-          <div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-          <div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div><div class="card"><img src="copao.png"><div class="card-content"><h4>Copão</h4><div class="price">R$ 59,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank"
-          class="whatsapp-btn-card">
-          Pedir</a></div>
-        </div>
-
-        <!-- GRUPO 5 -->
-        <div class="group">
-          <p>Vodka</p>   
-          <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div>
-           <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div> <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div> <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div> <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div> <div class="card"><img src="vodka.png"><div class="card-content"><h4>Vodka</h4><div class="price">R$ 29,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">
-          Pedir</a></div>
-        </div>
-
-        <!-- GRUPO 6 -->
-        <div class="group">
-          <p>Drinks</p> 
-          <div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div>
-          <div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div><div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div><div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div><div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div><div class="card"><img src="drinks.png"><div class="card-content"><h4>Drinks</h4><div class="price">R$ 119,90</div></div><a 
-          href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-          target="_blank" class="whatsapp-btn-card">Pedir</a></div>
-        </div> 
-      </div>      
+      <div class="track" id="track"></div>
     </div>
-
-    <button class="nav-btn" onclick="next()">></button>
+    <button class="nav-btn" id="btn-next" aria-label="Próxima categoria">&gt;</button>
   </div>
 </section>
 
-<!-- CONTATO -->
 <div class="contato-wrapper" id="contato">
-
-  <!-- BOX 1 -->
   <div class="contato-box">
     <h2>Faça seu pedido agora</h2>
     <p>Entrega rápida • Bebidas geladas • Atendimento imediato</p>
-
     <div class="beneficios">
       <span>⚡ Resposta rápida</span>
       <span>🍺 Sempre gelado</span>
       <span>🚚 Entrega na sua porta</span>
     </div>
-
-    <a href="https://wa.me/5511926291025?text=Olá,%20quero%20fazer%20um%20pedido!" 
-       class="btn" target="_blank">
-       Pedir pelo WhatsApp
-    </a>
+    <a href="#" data-link="whatsapp-pedido" class="btn" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
   </div>
 
-  <!-- BOX 2 -->
   <div class="contato-box">
     <h2>Formas de Pagamento</h2>
     <p>Simples e sem burocracia • Total segurança • Várias opções para sua compra</p>
-
     <div class="beneficios">
       <span>💳 Cartão Crédito e Débito</span>
       <span>💵 Em Dinheiro</span>
       <span>📱 Via Pix</span>
-      
-    </div>   
-
-    <a id="informacoes" href="https://wa.me/5511926291025?text=Olá,%20quero%20fazer%20um%20pedido!" 
-       class="whatsapp" target="_blank">
-       Mais informações
-    </a>
-  </div>
-
-  
-
-</div>
-<section class="localizacao" id="localizacao">    
     </div>
-    
-    <div class="local-mapa">   
-      <h2>Localização</h2>  <br>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.6773423840123!2d-46.73143910000001!3d-23.327462799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cee416f3af15cd%3A0x63898764dbaa542e!2sR.%20Ant%C3%B4nio%20In%C3%A1cio%20Bicudo%2C%2099%20-%20Companhia%20Fazenda%20Belem%2C%20Franco%20da%20Rocha%20-%20SP%2C%2007802-160!5e0!3m2!1spt-BR!2sbr!4v1774648328125!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <p>Rua Antônio Ignácio Bicudo, 99 - Companhia Fazenda Belém  <br> Franco da Rocha - Cep 07802-150</p> <br>
-    <p><strong><ins>Horário de funcionamento: Quarta a Domingo</ins></strong> <br> Quarta e Quinta das 11h as 20h <br> Sexta e Sábado das 11h as 22h <br> Domingo das 10h as 15h</p> 
-    
-    </div>     
+    <a href="#" data-link="whatsapp-pedido" class="whatsapp" target="_blank" rel="noopener">Mais informações</a>
+  </div>
+</div>
+
+<section class="localizacao" id="localizacao">
+  <div class="local-mapa">
+    <h2>Localização</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.6773423840123!2d-46.73143910000001!3d-23.327462799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cee416f3af15cd%3A0x63898764dbaa542e!2sR.%20Ant%C3%B4nio%20In%C3%A1cio%20Bicudo%2C%2099%20-%20Companhia%20Fazenda%20Belem%2C%20Franco%20da%20Rocha%20-%20SP%2C%2007802-160!5e0!3m2!1spt-BR!2sbr!4v1774648328125!5m2!1spt-BR!2sbr"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa da Adega Belo Gole"></iframe>
+    <p>Rua Antônio Ignácio Bicudo, 99 - Companhia Fazenda Belém<br>Franco da Rocha - CEP <span data-cep></span></p>
+    <p><strong><ins>Horário de funcionamento: Quarta a Domingo</ins></strong><br>
+      Quarta e Quinta das 11h às 20h<br>
+      Sexta e Sábado das 11h às 22h<br>
+      Domingo das 10h às 15h</p>
+  </div>
 </section>
 
-<a href="https://wa.me/5511926291025?text=Olá,%20quero%20fazer%20um%20pedido!" 
-   class="whatsapp-float" 
-   target="_blank">
-   <i class="fab fa-whatsapp"></i>
+<a href="#" data-link="whatsapp-pedido" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+  <i class="fab fa-whatsapp"></i>
 </a>
-
-
 
 <footer class="footer">
   <div class="footer-container">
-    <!-- LOGO / NOME -->
     <div class="footer-box footer-logo">
-      <img src="logo.png" alt="Logo da Adega">
+      <img src="logo.png" alt="Logo da Adega Belo Gole">
     </div>
 
-    <!-- ENDEREÇO -->
     <div class="footer-box">
       <h4>Endereço</h4>
-      <p>Rua Antônio Ignácio Bicudo 99</p>      
-      <p>Companhia Fazenda Belém - Cep: 07802-150</p>
+      <p>Rua Antônio Ignácio Bicudo, 99</p>
+      <p>Companhia Fazenda Belém - CEP: <span data-cep></span></p>
       <p>Franco da Rocha - SP</p>
     </div>
 
-    <!-- CONTATO -->
     <div class="footer-box">
       <h4>Contato</h4>
-      <p>(11)92629-1025</p>
-      <p>Funcionamento: Quarta a Domingo <br> Quarta e Quinta das 11h as 20h <br> Sexta e Sábado das 11h as 22h <br> Domingo das 10h as 15h</p>
-    </div>    
+      <p>(11) 92629-1025</p>
+      <p>Funcionamento: Quarta a Domingo<br>
+        Quarta e Quinta das 11h às 20h<br>
+        Sexta e Sábado das 11h às 22h<br>
+        Domingo das 10h às 15h</p>
+    </div>
 
-    <!-- REDES SOCIAIS -->
     <div class="footer-box">
       <h4>Redes Sociais</h4>
       <div class="social">
-        <a href="#">Instagram</a>        
-        <a href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90" target="_blank">WhatsApp</a>
+        <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" data-link="whatsapp-pedido" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-    </div> 
-
+    </div>
   </div>
 
   <div class="footer-bottom">
-    Adega Belo Gole CNPJ 000.000.0001/00 - ©2026 Todos os direitos reservados
+    Adega Belo Gole CNPJ <span id="footer-cnpj"></span> - ©2026 Todos os direitos reservados
   </div>
-
 </footer>
 
 <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-
-    <img id="popup-img" src="" alt="" />
-
+  <div class="popup-content popup-content--slide">
+    <span class="close" role="button" aria-label="Fechar">&times;</span>
+    <img id="popup-img" src="" alt="">
     <h3 id="popup-title"></h3>
     <p id="popup-price"></p>
-
-    <a id="popup-btn" class="whatsapp" target="_blank">Pedir</a>
+    <a id="popup-btn" class="whatsapp" target="_blank" rel="noopener">Pedir</a>
   </div>
 </div>
 
-<!-- POPUP PROMOÇÕES -->
 <div class="popup-promocoes" id="popupPromocoes">
-  <div class="popup-content">
-
-    <span class="fechar-popup" id="fecharPopup">&times;</span>
-
+  <div class="popup-content popup-content--promocoes">
+    <span class="fechar-popup" id="fecharPopup" role="button" aria-label="Fechar">&times;</span>
     <h2>Promoções</h2>
-
-    <div class="popup-grid">
-
-      <div class="popup-card">
-        <img src="chequemate3.png">
-        <h4>Xeque Mate</h4>
-        <span>R$ </span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      </div>
-
-      <div class="popup-card">
-        <img src="combo2.png">
-        <h4>Combo</h4>
-        <span>R$ 189,00</span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      </div>
-
-      <div class="popup-card">
-        <img src="longneck.png">
-        <h4>Long Neck</h4>
-        <span>R$ 17,00</span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      </div>
-
-      <div class="popup-card">
-        <img src="drinks.png">
-        <h4>Drinks</h4>
-        <span>R$ </span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      </div>
-
-      <div class="popup-card">
-        <img src="campari.png">
-        <h4>Campari</h4>
-        <span>R$ </span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      </div>
-
-      <div class="popup-card">
-        <img src="vodka.png">
-        <h4>Vodka</h4>
-        <span>R$ </span>
-
-      <a 
-        href="https://wa.me/5511926291025?text=Olá,%20quero%20Whisky%20Premium%20por%20R$%2089,90"
-        target="_blank"
-        class="whatsapp-btn-card">
-        Pedir
-      </a>
-      <!-- pode duplicar mais promoções aqui -->
-
-    </div>
+    <div class="popup-grid" id="popup-grid"></div>
   </div>
 </div>
 
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.querySelector('nav');
-  const header = document.querySelector('header');
-
-  // MENU
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-
-  // FECHAR MENU AO ROLAR
-  window.addEventListener('scroll', () => {
-    if (nav.classList.contains('active')) {
-      nav.classList.remove('active');
-    }
-  });
-
-  // SCROLL HEADER
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop && currentScroll > 50) {
-      header.classList.add('hidden');
-    } else {
-      header.classList.remove('hidden');
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-
-  // 🔥 CAROUSEL
-  const track = document.getElementById('track');
-  let slides = document.querySelectorAll('.group');
-
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[slides.length - 1].cloneNode(true);
-
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
-
-  slides = document.querySelectorAll('.group');
-
-  let index = 1;
-
-  track.style.transform = `translateX(-${index * 100}%)`;
-
-  function next() {
-    index++;
-    track.style.transition = "transform 0.5s ease";
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  function prev() {
-    index--;
-    track.style.transition = "transform 0.5s ease";
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  track.addEventListener('transitionend', () => {
-    if (slides[index].isSameNode(firstClone)) {
-      track.style.transition = "none";
-      index = 1;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    if (slides[index].isSameNode(lastClone)) {
-      track.style.transition = "none";
-      index = slides.length - 2;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-  });
-
-  // 🔥 POPUP PEQUENO (SLIDES)
-  const popup = document.getElementById('popup');
-  const popupImg = document.getElementById('popup-img');
-  const popupTitle = document.getElementById('popup-title');
-  const popupPrice = document.getElementById('popup-price');
-  const popupBtn = document.getElementById('popup-btn');
-  const closePopup = document.querySelector('.close');
-
-  const slidesPromo = document.querySelectorAll('.slide');
-
-  slidesPromo.forEach(slide => {
-    slide.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      let bg = slide.style.backgroundImage;
-      let img = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-
-      const title = slide.querySelector('h4')?.innerText || '';
-      const price = slide.querySelector('span')?.innerText || '';
-
-      popupImg.src = img;
-      popupTitle.innerText = title;
-      popupPrice.innerText = price;
-
-      popupBtn.href = `https://wa.me/5511926291025?text=Olá,%20quero%20${encodeURIComponent(title)}%20por%20${encodeURIComponent(price)}`;
-
-      popup.style.display = 'flex';
-    });
-  });
-
-  // FECHAR POPUP PEQUENO
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
-
-  // 🔥🔥🔥 POPUP GRANDE (BOTÃO VER TODAS PROMOÇÕES)
-  const btnAbrirPromocoes = document.getElementById('abrirPromocoes');
-  const popupPromocoes = document.getElementById('popupPromocoes');
-  const fecharPopupPromocoes = document.getElementById('fecharPopup');
-
-  if (btnAbrirPromocoes) {
-    btnAbrirPromocoes.addEventListener('click', (e) => {
-      e.preventDefault();
-      popupPromocoes.classList.add('active');
-    });
-  }
-
-  if (fecharPopupPromocoes) {
-    fecharPopupPromocoes.addEventListener('click', () => {
-      popupPromocoes.classList.remove('active');
-    });
-  }
-
-  window.addEventListener('click', (e) => {
-    if (e.target === popupPromocoes) {
-      popupPromocoes.classList.remove('active');
-    }
-  });
-</script>
-
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

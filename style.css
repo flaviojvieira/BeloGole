@@ -124,9 +124,9 @@ nav a:hover {
 
 .hero h1 {  
   font-size: 50px;
-  font-weight: 650px;
+  font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 20px; /* adiciona espaço abaixo do título */
+  margin-bottom: 20px;
 }
 
 .hero p {
@@ -195,6 +195,7 @@ nav a:hover {
   position: relative;
   transition: transform 0.3s ease;  
   flex: 0 0 auto;
+  cursor: pointer;
 }
 
 .slide:hover {
@@ -250,25 +251,22 @@ nav a:hover {
   display: flex;
 }
 
-.popup-content {
+.popup-content--promocoes {
   background: #111;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-
-  max-width: 320px; /* 🔥 menor */
+  max-width: 900px;
   width: 90%;
-
-  max-height: 90vh; /* 🔥 nunca ultrapassa tela */
+  max-height: 90vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
   border: 1px solid var(--dourado);
   position: relative;
 }
 
-.popup-content h2 {
+.popup-content--promocoes h2 {
   font-size: 2.5em;
   font-family: "Playball", cursive;
   margin-bottom: 20px;
@@ -319,10 +317,6 @@ nav a:hover {
   width: 94%;
 }
 
-.whatsapp-btn-card {
-  padding: 5px;  
-}
-
 .whatsapp-btn-card:hover {
   transform: scale(1.05);
 }
@@ -354,12 +348,12 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .container {
   overflow: hidden;
-  width: 100%;   
+  width: 70%;   
   margin: auto;
 }
 
@@ -389,10 +383,9 @@ nav a:hover {
 }
 
 .card {    
-  max-width: auto;
-    margin: 0 auto;
+  margin: 0 auto;
   background: linear-gradient(145deg, #2c2a2b, #1f1f1f);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(255,255,255,0.05);
@@ -415,8 +408,6 @@ nav a:hover {
   padding: 5px;
 }
 
-
-
 .price {
   color: var(--dourado);
   font-weight: bold;
@@ -432,7 +423,7 @@ nav a:hover {
 }
 
 .nav-btn:hover {
-  color: var(--dourado); /* 👈 efeito premium */
+ color: var(--dourado); /* 👈 efeito premium */
  transform: scale(1.2);
 }
 
@@ -644,33 +635,32 @@ nav a:hover {
   z-index: 2000;
 }
 
-.popup-content {
+.popup-content--slide {
   background: #111;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  max-width: 80vh;
+  max-width: 420px;
   width: 90%;
   border: 1px solid var(--dourado);
   position: relative;
   overflow: auto;
-  
 }
 
-.popup-content img {
+.popup-content--slide img {
   width: 100%;
   height: 370px;
-  object-fit: cover; /* 🔥 mostra imagem inteira */
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: #000;
 }
 
-.popup-content h3 {
+.popup-content--slide h3 {
   margin-bottom: 10px;
 }
 
-.popup-content p {
+.popup-content--slide p {
   color: var(--dourado);
   font-weight: bold;
   margin-bottom: 20px;
@@ -725,9 +715,6 @@ nav a:hover {
     line-height: 30px;
   }
 
-  .header-social {
-    position: fixed;
-  }
 }
 
 /* =========================
@@ -924,13 +911,14 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .popup-content {
+  .popup-content--slide,
+  .popup-content--promocoes {
     height: auto;
     max-height: 90vh;
     padding: 15px;
   }
 
-  .popup-content img {
+  .popup-content--slide img {
     width: 100%;
     height: auto;
     max-height: 500px;
