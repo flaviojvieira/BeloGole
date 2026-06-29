@@ -25,81 +25,49 @@ function formatarPreco(preco) {
   return preco.startsWith('R$') ? preco : `R$ ${preco}`;
 }
 
+function criarProdutos(img, nomeBase, preco, quantidade = 9) {
+  return Array.from({ length: quantidade }, (_, index) => ({
+    img,
+    nome: `${nomeBase} ${index + 1}`,
+    preco,
+  }));
+}
+
 // Preços vazios = "Consulte" até você informar os valores reais
 const PROMOCOES = [
-  { img: 'chequemate3.png', nome: 'Xeque Mate', preco: '' },
-  { img: 'combo2.png', nome: 'Combo', preco: '189,00' },
-  { img: 'longneck.png', nome: 'Long Neck', preco: '17,00' },
-  { img: 'drinks.png', nome: 'Drinks', preco: '' },
-  { img: 'campari.png', nome: 'Campari', preco: '' },
-  { img: 'vodka.png', nome: 'Vodka', preco: '119,90' },
+  { img: 'assets/chequemate3.png', nome: 'Xeque Mate', preco: '' },
+  { img: 'assets/combo2.png', nome: 'Combo', preco: '189,00' },
+  { img: 'assets/longneck.png', nome: 'Long Neck', preco: '17,00' },
+  { img: 'assets/drinks.png', nome: 'Drinks', preco: '' },
+  { img: 'assets/campari.png', nome: 'Campari', preco: '' },
+  { img: 'assets/vodka.png', nome: 'Vodka', preco: '119,90' },
 ];
+
+const PROMOCOES_EXIBIDAS = Array.from({ length: 8 }, (_, index) => PROMOCOES[index % PROMOCOES.length]);
 
 const CARDAPIO = [
   {
     categoria: 'Cerveja',
-    produtos: [
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-      { img: 'cervejas.png', nome: 'Cerveja', preco: '29,90' },
-    ],
+    produtos: criarProdutos('assets/cervejas.png', 'Cerveja', '29,90'),
   },
   {
     categoria: 'Combo',
-    produtos: [
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-      { img: 'combo.png', nome: 'Combo', preco: '119,90' },
-    ],
+    produtos: criarProdutos('assets/combo.png', 'Combo', '119,90'),
   },
   {
     categoria: 'Whisky',
-    produtos: [
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-      { img: 'wisky.png', nome: 'Whisky Premium', preco: '89,90' },
-    ],
+    produtos: criarProdutos('assets/wisky.png', 'Whisky', '89,90'),
   },
   {
     categoria: 'Copão',
-    produtos: [
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-      { img: 'copao.png', nome: 'Copão', preco: '59,90' },
-    ],
+    produtos: criarProdutos('assets/copao.png', 'Copão', '59,90'),
   },
   {
     categoria: 'Vodka',
-    produtos: [
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-      { img: 'vodka.png', nome: 'Vodka', preco: '29,90' },
-    ],
+    produtos: criarProdutos('assets/vodka.png', 'Vodka', '29,90'),
   },
   {
     categoria: 'Drinks',
-    produtos: [
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-      { img: 'drinks.png', nome: 'Drinks', preco: '119,90' },
-    ],
+    produtos: criarProdutos('assets/drinks.png', 'Drink', '119,90'),
   },
 ];

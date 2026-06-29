@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adega Belo Gole — Bebidas geladas com entrega rápida</title>
-  <meta name="description" content="Adega Belo Gole em Franco da Rocha. Cervejas, drinks, combos e destilados com entrega rápida na sua porta. Peça pelo WhatsApp!">
+  <title>Adega Belo Gole — O lugar certo para gelar o seu encontro</title>
+  <meta name="description" content="Adega Belo Gole em Franco da Rocha. Cervejas, drinks e combos para você curtir em um ambiente acolhedor e cheio de boa energia.">
   <meta property="og:title" content="Adega Belo Gole">
-  <meta property="og:description" content="Bebidas geladas na sua porta em minutos. Franco da Rocha e região.">
+  <meta property="og:description" content="O lugar certo para gelar o seu encontro em Franco da Rocha.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
 
@@ -15,16 +15,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playball&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo3.png" alt="Logo da Adega Belo Gole">
+    <img src="assets/logo3.png" alt="Logo da Adega Belo Gole">
   </div>
 
-  <nav>
+  <nav aria-label="Navegação principal">
     <a href="#top">Início</a>
     <a href="#promocao">Promoções</a>
     <a href="#cardapio">Cardápio</a>
@@ -32,22 +32,50 @@
     <a href="#localizacao">Localização</a>
   </nav>
 
-  <div class="header-social">
+  <div class="header-social" aria-label="Redes sociais">
     <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="#" data-link="whatsapp-pedido" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
 
-  <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button">☰</div>
+  <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" role="button" tabindex="0">☰</div>
 </header>
 
+<main id="content">
 <section class="hero" id="top">
   <div class="hero-content">
-    <h1>Bebidas geladas na sua porta em minutos</h1>
-    <p>
-      📍 Franco da Rocha e região<br>
-      ⏱️ Entrega rápida
+    <h1>O lugar certo para gelar o seu encontro</h1>
+    <p>      
+      🍹 Cervejas, drinks e boas vibes em um ambiente familiar
     </p>
-    <a href="#cardapio" class="btn">Ver Cardápio</a>
+    <div class="hero-actions">
+      <a href="#" data-link="whatsapp-pedido" target="_blank" rel="noopener" class="btn btn-secondary">Fale Conosco</a>      
+      <a href="#cardapio" class="btn btn-secondary">Ver Cardápio</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip" aria-label="Pontos de confiança">
+  <div class="trust-item">🍹 Ambiente acolhedor</div>
+  <div class="trust-item">💳 Pix, cartão e dinheiro</div>
+  <div class="trust-item">❄️ Bebidas geladas</div>
+  <div class="trust-item">⏰ Quarta a Domingo</div>
+</section>
+
+<section class="highlights" aria-label="Destaques">
+  <div class="highlight-card">
+    <i class="fas fa-bolt"></i>
+    <h3>Entrega rápida</h3>
+    <p>Atendimento ágil e entrega prática para você aproveitar sem esperar.</p>
+  </div>
+  <div class="highlight-card">
+    <i class="fas fa-wine-bottle"></i>
+    <h3>Bebidas geladas</h3>
+    <p>Confira combos, drinks e destilados com qualidade e sabor.</p>
+  </div>
+  <div class="highlight-card">
+    <i class="fas fa-comments"></i>
+    <h3>Pedido por WhatsApp</h3>
+    <p>Faça seu pedido em poucos cliques e receba resposta imediata.</p>
   </div>
 </section>
 
@@ -118,7 +146,7 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-box footer-logo">
-      <img src="logo.png" alt="Logo da Adega Belo Gole">
+      <img src="assets/logo.png" alt="Logo da Adega Belo Gole">
     </div>
 
     <div class="footer-box">
@@ -150,6 +178,7 @@
     Adega Belo Gole CNPJ <span id="footer-cnpj"></span> - ©2026 Todos os direitos reservados
   </div>
 </footer>
+</main>
 
 <div id="popup" class="popup">
   <div class="popup-content popup-content--slide">

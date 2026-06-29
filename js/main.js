@@ -55,10 +55,10 @@ function renderPromocoes() {
   const repeticoes = 4;
   let slidesHtml = '';
   for (let i = 0; i < repeticoes; i++) {
-    slidesHtml += PROMOCOES.map(criarSlide).join('');
+    slidesHtml += PROMOCOES_EXIBIDAS.map(criarSlide).join('');
   }
   slider.innerHTML = slidesHtml;
-  popupGrid.innerHTML = PROMOCOES.map(criarPopupCard).join('');
+  popupGrid.innerHTML = PROMOCOES_EXIBIDAS.map(criarPopupCard).join('');
 }
 
 function renderCardapio() {
@@ -92,16 +92,30 @@ function initMenu() {
   const nav = document.querySelector('nav');
   const header = document.querySelector('header');
 
-  toggle.addEventListener('click', () => nav.classList.toggle('active'));
-  toggle.setAttribute('aria-label', 'Abrir menu');
-  toggle.setAttribute('role', 'button');
+  if (!toggle || !nav || !header) return;
 
-  window.addEventListener('scroll', () => {
-    if (nav.classList.contains('active')) nav.classList.remove('active');
+  const fecharMenu = () => {
+    nav.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menu');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isActive = nav.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', String(isActive));
+    toggle.setAttribute('aria-label', isActive ? 'Fechar menu' : 'Abrir menu');
+  });
+
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', fecharMenu));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') fecharMenu();
   });
 
   let lastScrollTop = 0;
   window.addEventListener('scroll', () => {
+    if (nav.classList.contains('active')) fecharMenu();
+
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop && currentScroll > 50) {
       header.classList.add('hidden');
@@ -114,14 +128,18 @@ function initMenu() {
 
 function initCarousel() {
   const track = document.getElementById('track');
-  let slides = document.querySelectorAll('.group');
-  if (!slides.length) return;
+  const prevBtn = document.getElementById('btn-prev');
+  const nextBtn = document.getElementById('btn-next');
+  const slides = Array.from(document.querySelectorAll('.group'));
+
+  if (!track || !prevBtn || !nextBtn || slides.length === 0) return;
 
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
   track.appendChild(firstClone);
   track.insertBefore(lastClone, slides[0]);
-  slides = document.querySelectorAll('.group');
+
+  const allSlides = Array.from(document.querySelectorAll('.group'));
 
   let index = 1;
   track.style.transform = `translateX(-${index * 100}%)`;
@@ -132,18 +150,18 @@ function initCarousel() {
     track.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  document.getElementById('btn-prev').addEventListener('click', () => mover(-1));
-  document.getElementById('btn-next').addEventListener('click', () => mover(1));
+  prevBtn.addEventListener('click', () => mover(-1));
+  nextBtn.addEventListener('click', () => mover(1));
 
   track.addEventListener('transitionend', () => {
-    if (slides[index].isSameNode(firstClone)) {
+    if (allSlides[index] && allSlides[index].isSameNode(firstClone)) {
       track.style.transition = 'none';
       index = 1;
       track.style.transform = `translateX(-${index * 100}%)`;
     }
-    if (slides[index].isSameNode(lastClone)) {
+    if (allSlides[index] && allSlides[index].isSameNode(lastClone)) {
       track.style.transition = 'none';
-      index = slides.length - 2;
+      index = allSlides.length - 2;
       track.style.transform = `translateX(-${index * 100}%)`;
     }
   });
@@ -156,6 +174,8 @@ function initPopupSlide() {
   const popupPrice = document.getElementById('popup-price');
   const popupBtn = document.getElementById('popup-btn');
   const closePopup = document.querySelector('#popup .close');
+
+  if (!popup || !popupImg || !popupTitle || !popupPrice || !popupBtn || !closePopup) return;
 
   function fechar() {
     popup.style.display = 'none';
@@ -184,6 +204,8 @@ function initPopupPromocoes() {
   const btnAbrir = document.getElementById('abrirPromocoes');
   const popupPromocoes = document.getElementById('popupPromocoes');
   const fecharBtn = document.getElementById('fecharPopup');
+
+  if (!btnAbrir || !popupPromocoes || !fecharBtn) return;
 
   function fechar() {
     popupPromocoes.classList.remove('active');
