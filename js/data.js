@@ -60,7 +60,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Copão',
-    produtos: criarProdutos('assets/copao.png', 'Copão', '59,90'),
+    produtos:   riarProdutos('assets/copao.png', 'Copão', '59,90'),
   },
   {
     categoria: 'Vodka',

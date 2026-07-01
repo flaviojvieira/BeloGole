@@ -154,13 +154,15 @@ nav a:hover {
   letter-spacing: 1px;
   margin-bottom: 20px;
   line-height: 1.15;
+  color: var(--dourado-claro);
 }
 
 .hero p {
-  font-size: 18px;
-  opacity: 0.9;
+  font-size: 20px;
+  opacity: 0.95;
   margin-bottom: 30px;
-  font-weight: 300;
+  font-weight: 400;
+  color: var(--dourado-claro);
 }
 
 .btn {  
@@ -192,6 +194,20 @@ nav a:hover {
 .hero-actions .btn-secondary {
   min-width: 240px;
   width: 240px;
+  font-size: 1.05rem;
+  background: linear-gradient(145deg, #1f1f1f, #121212);
+  color: var(--dourado-claro);
+  border: 1px solid rgba(241, 161, 52, 0.2);
+}
+
+/* Hover suave para botões do hero (tonalidade próxima ao estado normal) */
+.hero .hero-actions .btn:hover,
+.hero .hero-actions .btn-secondary:hover {
+  background: linear-gradient(145deg, #232323, #141414);
+  color: var(--dourado-claro);
+  transform: translateY(-1px);
+  box-shadow: none;
+  border: 1.2px solid rgba(241, 161, 52, 0.35);
 }
 
 .btn-secondary {
@@ -617,14 +633,14 @@ nav a:hover {
   padding: 14px 34px;
   min-width: 240px;
   width: 240px;
-  background: rgba(241, 161, 52, 0.12);
-  color: var(--dourado-claro);
-  border: 1px solid rgba(241, 161, 52, 0.45);
-  font-size: 0.95rem;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
+  border: none;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 30px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   box-shadow: none;
   white-space: nowrap;
 }
@@ -633,7 +649,7 @@ nav a:hover {
 .contato-box .whatsapp:hover {
   transform: translateY(-1px);
   box-shadow: none;
-  background: rgba(241, 161, 52, 0.2);
+  background: linear-gradient(135deg, #F1A134, #FEC966);
   color: #000;
 }
 
@@ -888,16 +904,18 @@ nav a:hover {
 ========================= */
 @media (max-width: 768px) {
   .hero {
-    height: 100vh;
-    background: url('assets/fachada4.png') no-repeat center/cover;
-    background-attachment: fixed;
-    background-position: center top;
+    height: 100svh;
+    min-height: 100svh;
+    background: url('assets/fachada4.png') no-repeat center center / cover;
+    background-attachment: scroll;
+    background-position: center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    overflow: hidden;
   }
 
   .hero::after {
@@ -905,7 +923,7 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.35);
   }
 
   .group {
@@ -916,9 +934,52 @@ nav a:hover {
     width: 100%;
   }
 
+  .card {
+    transform: scale(1.05);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .card img {
+    min-height: 170px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 14px;
+    gap: 8px;
+  }
+
   .highlights {
     grid-template-columns: 1fr;
     padding: 30px 20px 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: #fff;
   }
 
   .hero-actions {
