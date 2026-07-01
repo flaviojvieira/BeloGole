@@ -929,14 +929,14 @@ nav a:hover {
   .group {
     flex: 0 0 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
   }
 
   .card {
-    transform: scale(1.05);
-    width: 100%;
+    transform: none;
+    width: auto;
     max-width: 100%;
     min-width: 0;
   }
@@ -1009,10 +1009,6 @@ nav a:hover {
     border-radius: 5px;
   }
 
-  .group .card:nth-child(n+8) {
-    display: none;
-  }
-
   .container {
     overflow: hidden;
     width: 100%;
@@ -1021,8 +1017,8 @@ nav a:hover {
   }
 
   .cardapio {
-    padding-left: 1px;
-    padding-right: 1px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   h2 {
