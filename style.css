@@ -976,15 +976,15 @@ nav a:hover {
   .hero h1 {
     display: block;
     text-transform: uppercase;  
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.705);  
+    text-shadow: 5px 5px 1px black; ;  
+    color: white;
   }
 
   .hero p {
     font-size: 18px;
     opacity: 0.9;
     margin-bottom: 30px;
-    font-weight: 300; 
-    
+    font-weight: 300;    
   }
 
   .hero-actions {
@@ -997,7 +997,10 @@ nav a:hover {
     width: 100%;
     min-width: auto;
     color: white;
-    border-color: 1 1 1 black }
+    border-color: 1 1 1 black ;
+    text-shadow: 1px 1px 2px black; ; 
+  }
+
 
   .trust-strip {
     grid-template-columns: 1fr 1fr;
