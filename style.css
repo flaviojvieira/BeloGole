@@ -534,6 +534,7 @@ nav a:hover {
   height: auto;
   display: flex;
   flex-direction: column;
+  font-size: 1.2rem;
 }
 
 .card:hover {
@@ -559,7 +560,7 @@ nav a:hover {
 .price {
   color: var(--dourado);
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .nav-btn {
@@ -942,8 +943,8 @@ nav a:hover {
     min-width: 0;
   }
 
-  .card img {
-    
+  .card img {    
+    width: 100%;
     min-height: 220px;
     object-fit: cover;
      object-fit: contain;
