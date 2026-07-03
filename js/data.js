@@ -22,13 +22,13 @@ function whatsappPedido() {
 
 function formatarPreco(preco) {
   if (!preco) return 'Consulte';
-  return preco.startsWith('R$') ? preco : `R$ ${preco}`;
+  return preco.startsWith('') ? preco : `R$ ${preco}`;
 }
 
-function criarProdutos(img, nomeBase, preco, quantidade = 9) {
+function criarProdutos(img, nomeBase, preco, quantidade = 6) {
   return Array.from({ length: quantidade }, (_, index) => ({
     img,
-    nome: `${nomeBase} ${index + 1}`,
+    nome: `${nomeBase}`,
     preco,
   }));
 }
