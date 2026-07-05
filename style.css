@@ -945,9 +945,10 @@ nav a:hover {
 
   .card img {    
     width: 100%;
-    min-height: 220px;
-    object-fit: cover;
-     object-fit: contain;
+    height: auto;
+    min-height: 0;    
+    object-fit: contain;
+    display: block;
     background: #fff;
   }
 
