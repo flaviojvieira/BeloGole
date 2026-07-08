@@ -67,6 +67,93 @@ function renderCardapio() {
   track.innerHTML = CARDAPIO.map(criarGrupo).join('');
 }
 
+/* ===================== PRÉVIA DO CARDÁPIO NA HOME ===================== */
+
+function criarPreviewCategoria(categoria) {
+  const destaques = categoria.produtos.slice(0, 3);
+  return `
+    <div class="preview-categoria">
+      <h3 class="preview-categoria-titulo">${categoria.categoria}</h3>
+      <div class="preview-grid">
+        ${destaques.map(criarCard).join('')}
+      </div>
+    </div>`;
+}
+
+function renderCardapioPreview() {
+  const container = document.getElementById('cardapio-preview');
+  if (!container) return;
+  container.innerHTML = CARDAPIO.map(criarPreviewCategoria).join('');
+}
+
+/* ===================== PÁGINA CARDÁPIO COMPLETO (ABAS) ===================== */
+
+function agruparPorSub(produtos) {
+  const grupos = [];
+  const mapa = new Map();
+
+  produtos.forEach(p => {
+    const chave = p.sub || '__geral__';
+    if (!mapa.has(chave)) {
+      const grupo = { titulo: p.sub || null, produtos: [] };
+      mapa.set(chave, grupo);
+      grupos.push(grupo);
+    }
+    mapa.get(chave).produtos.push(p);
+  });
+
+  return grupos;
+}
+
+function criarTab(categoria, index) {
+  return `<button type="button" class="tab-btn${index === 0 ? ' active' : ''}" data-categoria="${categoria.categoria}">${categoria.categoria}</button>`;
+}
+
+function criarSecaoCategoria(categoria, index) {
+  const grupos = agruparPorSub(categoria.produtos);
+  const gruposHtml = grupos.map(grupo => `
+    <div class="subgrupo">
+      ${grupo.titulo ? `<h3 class="subgrupo-titulo">${grupo.titulo}</h3>` : ''}
+      <div class="subgrupo-grid">
+        ${grupo.produtos.map(criarCard).join('')}
+      </div>
+    </div>`).join('');
+
+  return `<div class="cardapio-secao${index === 0 ? ' active' : ''}" data-categoria="${categoria.categoria}">${gruposHtml}</div>`;
+}
+
+function renderCardapioCompleto() {
+  const tabsContainer = document.getElementById('cardapio-tabs');
+  const secoesContainer = document.getElementById('cardapio-secoes');
+  if (!tabsContainer || !secoesContainer) return;
+
+  tabsContainer.innerHTML = CARDAPIO.map(criarTab).join('');
+  secoesContainer.innerHTML = CARDAPIO.map(criarSecaoCategoria).join('');
+}
+
+function initFiltroCardapio() {
+  const tabsContainer = document.getElementById('cardapio-tabs');
+  const secoesContainer = document.getElementById('cardapio-secoes');
+  if (!tabsContainer || !secoesContainer) return;
+
+  tabsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+
+    const categoriaSelecionada = btn.dataset.categoria;
+
+    tabsContainer.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.toggle('active', b === btn);
+    });
+
+    secoesContainer.querySelectorAll('.cardapio-secao').forEach(secao => {
+      secao.classList.toggle('active', secao.dataset.categoria === categoriaSelecionada);
+    });
+
+    btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+}
+
 function aplicarConfig() {
   const pedidoUrl = whatsappPedido();
 
@@ -227,9 +314,12 @@ function initPopupPromocoes() {
 document.addEventListener('DOMContentLoaded', () => {
   renderPromocoes();
   renderCardapio();
+  renderCardapioPreview();
+  renderCardapioCompleto();
   aplicarConfig();
   initMenu();
   initCarousel();
   initPopupSlide();
   initPopupPromocoes();
+  initFiltroCardapio();
 });
