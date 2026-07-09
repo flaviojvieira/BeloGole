@@ -483,7 +483,7 @@ nav a:hover {
   padding: 80px 40px;
   text-align: center;
   background: #373435;
-  background: url('assets/menu7.png') center/cover no-repeat;   
+  background: url('assets/menu7.png') center center / cover no-repeat fixed;
 }
 
 .carousel {
@@ -577,38 +577,85 @@ nav a:hover {
  transform: scale(1.2);
 }
 
-/* ===================== PRÉVIA DO CARDÁPIO NA HOME ===================== */
-.cardapio-preview-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  max-width: 1200px;
-  margin: 30px auto 40px;
+/* ===================== PRÉVIA DO CARDÁPIO NA HOME (tiles por categoria) ===================== */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  max-width: 1150px;
+  margin: 30px auto 10px;
 }
 
-.preview-categoria-titulo {
-  font-family: "Playball", cursive;
-  font-size: 2.4em;
-  color: var(--dourado);
-  margin-bottom: 18px;
+.categoria-tile {
+  background: linear-gradient(145deg, #2c2a2b, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-tile:hover {
+  transform: translateY(-6px);
+  border-color: var(--dourado);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.categoria-tile-imagem {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.categoria-tile-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.categoria-tile:hover .categoria-tile-imagem img {
+  transform: scale(1.06);
+}
+
+.categoria-tile-content {
+  padding: 16px 20px 22px;
   text-align: center;
 }
 
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+.categoria-tile-nome {
+  font-family: "Playball", cursive;
+  font-size: 2.1em;
+  color: var(--dourado);
+  margin-bottom: 14px;
 }
 
-.ver-cardapio-cta {
-  margin-top: 10px;
+.categoria-tile-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
+  border: none;
+  min-width: auto;
+  width: auto;
+  box-shadow: none;
+}
+
+.categoria-tile-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: none;
+  background: linear-gradient(135deg, #F1A134, #FEC966);
+  color: #000;
 }
 
 /* ===================== PÁGINA CARDÁPIO COMPLETO ===================== */
 .cardapio-completo {
   padding: 200px 40px 80px;
   background: #373435;
-  background: url('assets/menu7.png') center/cover no-repeat;
+  background: url('assets/menu7.png') center center / cover no-repeat fixed;
   min-height: 70vh;
 }
 
@@ -1010,7 +1057,7 @@ nav a:hover {
     height: 100svh;
     min-height: 100svh;
     background: url('assets/fachada4.png') no-repeat center center / cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -1290,12 +1337,16 @@ nav a:hover {
     padding: 140px 16px 60px;
   }
 
-  .preview-categoria-titulo,
+  .categoria-tile-nome,
   .subgrupo-titulo {
     font-size: 1.7em;
   }
 
-  .preview-grid,
+  .categorias-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
   .subgrupo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;

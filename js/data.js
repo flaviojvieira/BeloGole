@@ -54,6 +54,7 @@ function produto(img, nome, preco, sub = null) {
 const CARDAPIO = [
   {
     categoria: 'Cerveja',
+    imagem: 'assets/cervejas.png',
     produtos: [
       // Fardo
       produto('assets/cervejas.png', 'Heineken', '40,00', 'Fardo c/8'),
@@ -84,6 +85,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Drinks',
+    imagem: 'assets/drinks.png',
     produtos: [
       produto('assets/drinks.png', 'Caipirinha', '15,00'),
       produto('assets/drinks.png', 'Nevada', '15,00'),
@@ -96,10 +98,12 @@ const CARDAPIO = [
   },
   {
     categoria: 'Combo',
+    imagem: 'assets/combo.png',
     produtos: criarProdutos('assets/combo.png', 'Combo', '119,90'),
   },
   {
     categoria: 'Whisky',
+    imagem: 'assets/wisky.png',
     produtos: [
       // Doses
       produto('assets/wisky.png', 'Red Label', '15,00', 'Dose'),
@@ -121,6 +125,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Vodka',
+    imagem: 'assets/vodka.png',
     produtos: [
       produto('assets/vodka.png', 'Dose Smirnoff', '15,00'),
       produto('assets/vodka.png', 'Dose Absolut', '20,00'),
@@ -128,6 +133,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Cachaça',
+    imagem: 'assets/copao.png',
     produtos: [
       produto('assets/copao.png', 'Velho Barreiro', '4,00'),
       produto('assets/copao.png', 'Velho Barreiro com Limão', '5,00'),
@@ -140,6 +146,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Vinho',
+    imagem: 'assets/combo.png',
     produtos: [
       produto('assets/combo.png', 'Vinho Chalise', '17,00'),
       produto('assets/combo.png', 'Vinho São Tomé', '25,00'),
@@ -151,6 +158,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Licor',
+    imagem: 'assets/campari.png',
     produtos: [
       produto('assets/campari.png', 'Sabores de Licor', '10,00', 'Dose'),
       produto('assets/campari.png', 'Dom Taparro', '80,00', 'Garrafa'),

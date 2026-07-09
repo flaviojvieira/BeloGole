@@ -67,15 +67,18 @@ function renderCardapio() {
   track.innerHTML = CARDAPIO.map(criarGrupo).join('');
 }
 
-/* ===================== PRÉVIA DO CARDÁPIO NA HOME ===================== */
+/* ===================== PRÉVIA DO CARDÁPIO NA HOME (1 tile por categoria) ===================== */
 
-function criarPreviewCategoria(categoria) {
-  const destaques = categoria.produtos.slice(0, 3);
+function criarTileCategoria(categoria) {
+  const link = `cardapio.html?categoria=${encodeURIComponent(categoria.categoria)}`;
   return `
-    <div class="preview-categoria">
-      <h3 class="preview-categoria-titulo">${categoria.categoria}</h3>
-      <div class="preview-grid">
-        ${destaques.map(criarCard).join('')}
+    <div class="categoria-tile">
+      <a href="${link}" class="categoria-tile-imagem">
+        <img src="${categoria.imagem}" alt="${categoria.categoria}" loading="lazy">
+      </a>
+      <div class="categoria-tile-content">
+        <h3 class="categoria-tile-nome">${categoria.categoria}</h3>
+        <a href="${link}" class="btn categoria-tile-btn">Ver Cardápio</a>
       </div>
     </div>`;
 }
@@ -83,10 +86,15 @@ function criarPreviewCategoria(categoria) {
 function renderCardapioPreview() {
   const container = document.getElementById('cardapio-preview');
   if (!container) return;
-  container.innerHTML = CARDAPIO.map(criarPreviewCategoria).join('');
+  container.innerHTML = CARDAPIO.map(criarTileCategoria).join('');
 }
 
 /* ===================== PÁGINA CARDÁPIO COMPLETO (ABAS) ===================== */
+
+function getCategoriaFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('categoria');
+}
 
 function agruparPorSub(produtos) {
   const grupos = [];
@@ -105,11 +113,11 @@ function agruparPorSub(produtos) {
   return grupos;
 }
 
-function criarTab(categoria, index) {
-  return `<button type="button" class="tab-btn${index === 0 ? ' active' : ''}" data-categoria="${categoria.categoria}">${categoria.categoria}</button>`;
+function criarTab(categoria, ativa) {
+  return `<button type="button" class="tab-btn${ativa ? ' active' : ''}" data-categoria="${categoria.categoria}">${categoria.categoria}</button>`;
 }
 
-function criarSecaoCategoria(categoria, index) {
+function criarSecaoCategoria(categoria, ativa) {
   const grupos = agruparPorSub(categoria.produtos);
   const gruposHtml = grupos.map(grupo => `
     <div class="subgrupo">
@@ -119,7 +127,7 @@ function criarSecaoCategoria(categoria, index) {
       </div>
     </div>`).join('');
 
-  return `<div class="cardapio-secao${index === 0 ? ' active' : ''}" data-categoria="${categoria.categoria}">${gruposHtml}</div>`;
+  return `<div class="cardapio-secao${ativa ? ' active' : ''}" data-categoria="${categoria.categoria}">${gruposHtml}</div>`;
 }
 
 function renderCardapioCompleto() {
@@ -127,8 +135,12 @@ function renderCardapioCompleto() {
   const secoesContainer = document.getElementById('cardapio-secoes');
   if (!tabsContainer || !secoesContainer) return;
 
-  tabsContainer.innerHTML = CARDAPIO.map(criarTab).join('');
-  secoesContainer.innerHTML = CARDAPIO.map(criarSecaoCategoria).join('');
+  const categoriaURL = getCategoriaFromURL();
+  const categoriaValida = CARDAPIO.some(c => c.categoria === categoriaURL);
+  const categoriaAtiva = categoriaValida ? categoriaURL : CARDAPIO[0].categoria;
+
+  tabsContainer.innerHTML = CARDAPIO.map(cat => criarTab(cat, cat.categoria === categoriaAtiva)).join('');
+  secoesContainer.innerHTML = CARDAPIO.map(cat => criarSecaoCategoria(cat, cat.categoria === categoriaAtiva)).join('');
 }
 
 function initFiltroCardapio() {
