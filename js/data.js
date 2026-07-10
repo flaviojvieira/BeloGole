@@ -73,10 +73,10 @@ const CARDAPIO = [
       produto('assets/cervejas.png', 'Antarctica', '50,00', 'Balde c/10 - Caçulinha 300ml'),
       produto('assets/cervejas.png', 'Original', '60,00', 'Balde c/10 - Caçulinha 300ml'),
       // 269ml
-      produto('assets/cervejas.png', 'Skol', '5,00', '269ml'),
-      produto('assets/cervejas.png', 'Original', '5,00', '269ml'),
-      produto('assets/cervejas.png', 'Império', '5,00', '269ml'),
-      produto('assets/cervejas.png', 'Heineken', '6,00', '269ml'),
+      produto('assets/cervejas.png', 'Skol', '5,00', 'Lata 269ml'),
+      produto('assets/cervejas.png', 'Original', '5,00', 'Lata 269ml'),
+      produto('assets/cervejas.png', 'Império', '5,00', 'Lata 269ml'),
+      produto('assets/cervejas.png', 'Heineken', '6,00', 'Lata 269ml'),
       // Long Neck
       produto('assets/longneck.png', 'Heineken', '12,00', 'Long Neck'),
       produto('assets/longneck.png', 'Corona', '12,00', 'Long Neck'),

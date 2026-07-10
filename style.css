@@ -115,15 +115,32 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('assets/fachada4.png') no-repeat center/cover;
-  /*background-attachment: fixed;*/
-  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
   padding: 20px;
+}
+
+/* Camada de fundo fixa (div real, mais confiável que background-attachment:fixed
+   ou pseudo-elemento em navegadores mobile) */
+.bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.bg-fixed--hero {
+  background-image: url('assets/fachada4.png');
+}
+
+.bg-fixed--cardapio {
+  background-image: url('assets/menu7.png');
 }
 
 .hero::after {
@@ -309,6 +326,10 @@ nav a:hover {
   text-align: center;
 }
 
+.header-cardapio {
+  margin-bottom: 40px;
+}
+
 .slider {
   display: flex;
   gap: 00px;
@@ -447,16 +468,18 @@ nav a:hover {
 
 /* BOTÃO POPUP PROMOÇÕES*/
 .whatsapp-btn-card {
-  display: inline-block;
+  display: block;
   padding: 8px 16px;
   background: linear-gradient(135deg, #F1A134, #FEC966);
   color: #000;
   font-weight: bold;
   border-radius: 20px;
   text-decoration: none;
+  text-align: center;
   font-size: 1em;
   transition: 0.3s;
   width: 94%;
+  margin: auto auto 12px;
 }
 
 .whatsapp-btn-card:hover {
@@ -482,8 +505,7 @@ nav a:hover {
 .cardapio {
   padding: 80px 40px;
   text-align: center;
-  background: #373435;
-  background: url('assets/menu7.png') center center / cover no-repeat fixed;
+  position: relative;
 }
 
 .carousel {
@@ -531,7 +553,9 @@ nav a:hover {
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid rgba(255,255,255,0.08);
-  height: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 260px;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
@@ -545,7 +569,8 @@ nav a:hover {
 
 .card img {
   width: 100%;
-  height: auto; /* 🔥 remove corte */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
 }
 
@@ -555,6 +580,15 @@ nav a:hover {
   flex-direction: column;
   gap: 6px;
   flex: 1;
+}
+
+.card-content h4 {
+  min-height: 2.5em;
+  line-height: 1.25em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .price {
@@ -654,9 +688,8 @@ nav a:hover {
 /* ===================== PÁGINA CARDÁPIO COMPLETO ===================== */
 .cardapio-completo {
   padding: 200px 40px 80px;
-  background: #373435;
-  background: url('assets/menu7.png') center center / cover no-repeat fixed;
   min-height: 70vh;
+  position: relative;
 }
 
 .cardapio-tabs {
@@ -664,7 +697,7 @@ nav a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  max-width: 950px;
+  max-width: 1200px;
   margin: 0 auto 50px;
 }
 
@@ -678,6 +711,7 @@ nav a:hover {
   font-size: 1rem;
   cursor: pointer;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .tab-btn:hover {
@@ -723,8 +757,83 @@ nav a:hover {
 
 .subgrupo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+  justify-content: center;
   gap: 20px;
+}
+
+/* ===================== SUBMENU DE SUBCATEGORIAS (ex: Cerveja -> Fardo, 600ml...) ===================== */
+.subcategoria-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.subcategoria-menu.escondido {
+  display: none;
+}
+
+.subcategoria-card {
+  background: linear-gradient(145deg, #2c2a2b, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+}
+
+.subcategoria-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--dourado);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.subcategoria-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.subcategoria-card span {
+  display: block;
+  padding: 14px 10px;
+  font-family: "Playball", cursive;
+  font-size: 2.1em;
+  color: var(--dourado);
+  text-align: center;
+}
+
+.subgrupo-produtos {
+  display: none;
+}
+
+.subgrupo-produtos.visivel {
+  display: block;
+  animation: fadeIn 0.35s ease;
+}
+
+.voltar-subcategoria {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(241, 161, 52, 0.5);
+  color: var(--dourado-claro);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.voltar-subcategoria:hover {
+  background: rgba(241, 161, 52, 0.15);
 }
 
 /* CONTATO */
@@ -734,6 +843,7 @@ nav a:hover {
   gap: 30px;  
   flex-wrap: wrap;
   padding: 40px 0;
+  background-color: black;
 }
 
 .contato-box {
@@ -1056,16 +1166,11 @@ nav a:hover {
   .hero {
     height: 100svh;
     min-height: 100svh;
-    background: url('assets/fachada4.png') no-repeat center center / cover;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
 
   .hero::after {
@@ -1350,6 +1455,16 @@ nav a:hover {
   .subgrupo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  .subcategoria-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .subcategoria-card span {
+    font-size: 1.7em;
+    padding: 10px 8px;
   }
 
   .tab-btn {

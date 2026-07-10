@@ -117,8 +117,41 @@ function criarTab(categoria, ativa) {
   return `<button type="button" class="tab-btn${ativa ? ' active' : ''}" data-categoria="${categoria.categoria}">${categoria.categoria}</button>`;
 }
 
+// Categorias com mais de 1 subgrupo E muitos produtos ganham um submenu
+// (ex: Cerveja -> Fardo, 600ml, Long Neck...). Categorias pequenas mostram tudo direto.
+function usaSubmenu(categoria, grupos) {
+  return grupos.length > 1;
+}
+
+function criarSubcategoriaCard(categoria, grupo) {
+  return `
+    <button type="button" class="subcategoria-card" data-sub="${grupo.titulo}">
+      <img src="${categoria.imagem}" alt="${grupo.titulo}" loading="lazy">
+      <span>${grupo.titulo}</span>
+    </button>`;
+}
+
 function criarSecaoCategoria(categoria, ativa) {
   const grupos = agruparPorSub(categoria.produtos);
+
+  if (usaSubmenu(categoria, grupos)) {
+    const menuHtml = `
+      <div class="subcategoria-menu">
+        ${grupos.map(grupo => criarSubcategoriaCard(categoria, grupo)).join('')}
+      </div>`;
+
+    const produtosHtml = grupos.map(grupo => `
+      <div class="subgrupo-produtos" data-sub="${grupo.titulo}">
+        <button type="button" class="voltar-subcategoria">← Voltar para ${categoria.categoria}</button>
+        <h3 class="subgrupo-titulo">${grupo.titulo}</h3>
+        <div class="subgrupo-grid">
+          ${grupo.produtos.map(criarCard).join('')}
+        </div>
+      </div>`).join('');
+
+    return `<div class="cardapio-secao${ativa ? ' active' : ''}" data-categoria="${categoria.categoria}">${menuHtml}${produtosHtml}</div>`;
+  }
+
   const gruposHtml = grupos.map(grupo => `
     <div class="subgrupo">
       ${grupo.titulo ? `<h3 class="subgrupo-titulo">${grupo.titulo}</h3>` : ''}
@@ -128,6 +161,15 @@ function criarSecaoCategoria(categoria, ativa) {
     </div>`).join('');
 
   return `<div class="cardapio-secao${ativa ? ' active' : ''}" data-categoria="${categoria.categoria}">${gruposHtml}</div>`;
+}
+
+function resetSubmenus() {
+  document.querySelectorAll('.cardapio-secao').forEach(secao => {
+    const menu = secao.querySelector('.subcategoria-menu');
+    if (!menu) return;
+    menu.classList.remove('escondido');
+    secao.querySelectorAll('.subgrupo-produtos').forEach(el => el.classList.remove('visivel'));
+  });
 }
 
 function renderCardapioCompleto() {
@@ -162,7 +204,34 @@ function initFiltroCardapio() {
       secao.classList.toggle('active', secao.dataset.categoria === categoriaSelecionada);
     });
 
+    resetSubmenus();
+
     btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+
+  // Navegação dentro do submenu (ex: Cerveja -> Fardo -> produtos -> voltar)
+  secoesContainer.addEventListener('click', (e) => {
+    const subBtn = e.target.closest('.subcategoria-card');
+    if (subBtn) {
+      const secao = subBtn.closest('.cardapio-secao');
+      const sub = subBtn.dataset.sub;
+
+      secao.querySelector('.subcategoria-menu').classList.add('escondido');
+      secao.querySelectorAll('.subgrupo-produtos').forEach(el => {
+        el.classList.toggle('visivel', el.dataset.sub === sub);
+      });
+
+      secao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    const backBtn = e.target.closest('.voltar-subcategoria');
+    if (backBtn) {
+      const secao = backBtn.closest('.cardapio-secao');
+      secao.querySelectorAll('.subgrupo-produtos').forEach(el => el.classList.remove('visivel'));
+      secao.querySelector('.subcategoria-menu').classList.remove('escondido');
+      secao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 }
 
@@ -323,6 +392,30 @@ function initPopupPromocoes() {
   });
 }
 
+// Camada de fundo fixa compartilhada (usada quando existe mais de uma seção
+// com "fundo fixo" na mesma página, ex: hero + cardápio no index).
+// Troca a imagem conforme a seção que está visível, evitando que uma
+// sobreponha a outra.
+function initFixedBackgrounds() {
+  const bg = document.getElementById('bg-fixed-shared');
+  if (!bg) return;
+
+  const secoes = document.querySelectorAll('[data-bg]');
+  if (!secoes.length) return;
+
+  bg.style.backgroundImage = `url('${secoes[0].dataset.bg}')`;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bg.style.backgroundImage = `url('${entry.target.dataset.bg}')`;
+      }
+    });
+  }, { threshold: 0.3 });
+
+  secoes.forEach(sec => observer.observe(sec));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderPromocoes();
   renderCardapio();
@@ -334,4 +427,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initPopupSlide();
   initPopupPromocoes();
   initFiltroCardapio();
+  initFixedBackgrounds();
 });
