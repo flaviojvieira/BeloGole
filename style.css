@@ -765,9 +765,10 @@ nav a:hover {
 /* ===================== SUBMENU DE SUBCATEGORIAS (ex: Cerveja -> Fardo, 600ml...) ===================== */
 .subcategoria-menu {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 260px));
+  justify-content: center;
   gap: 20px;
-  max-width: 950px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

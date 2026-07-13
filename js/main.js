@@ -400,20 +400,60 @@ function initFixedBackgrounds() {
   const bg = document.getElementById('bg-fixed-shared');
   if (!bg) return;
 
-  const secoes = document.querySelectorAll('[data-bg]');
+  const secoes = Array.from(document.querySelectorAll('[data-bg]'));
   if (!secoes.length) return;
 
-  bg.style.backgroundImage = `url('${secoes[0].dataset.bg}')`;
+  // Pré-carrega todas as imagens de fundo usadas nas seções, assim quando a
+  // troca acontecer o navegador já tem a imagem em cache/decodificada
+  // (evita o "flash" mostrando a imagem antiga por um instante).
+  const urlsUnicas = [...new Set(secoes.map(s => s.dataset.bg))];
+  urlsUnicas.forEach(url => {
+    const preload = new Image();
+    preload.src = url;
+  });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        bg.style.backgroundImage = `url('${entry.target.dataset.bg}')`;
+  let urlAtual = null;
+
+  function secaoAtiva() {
+    // Considera "ativa" a última seção que já começou a aparecer na tela
+    // (seu topo já cruzou a borda de baixo da viewport). Assim a troca
+    // acontece com bastante folga, antes da seção ficar visível de fato.
+    const limiteBaixo = window.scrollY + window.innerHeight;
+    let ativa = secoes[0];
+    for (const sec of secoes) {
+      const topoAbsoluto = sec.getBoundingClientRect().top + window.scrollY;
+      if (topoAbsoluto <= limiteBaixo) {
+        ativa = sec;
       }
-    });
-  }, { threshold: 0.3 });
+    }
+    return ativa;
+  }
 
-  secoes.forEach(sec => observer.observe(sec));
+  function atualizarFundo() {
+    const ativa = secaoAtiva();
+    const url = ativa.dataset.bg;
+    if (url !== urlAtual) {
+      urlAtual = url;
+      bg.style.backgroundImage = `url('${url}')`;
+    }
+  }
+
+  atualizarFundo();
+
+  // Atualiza a cada frame de rolagem (sem esperar callback assíncrono do
+  // IntersectionObserver, que pode atrasar alguns frames em rolagens rápidas).
+  let ticking = false;
+  function aoRolar() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      atualizarFundo();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', aoRolar, { passive: true });
+  window.addEventListener('resize', atualizarFundo);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
