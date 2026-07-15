@@ -85,7 +85,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Drinks',
-    imagem: 'assets/drinks.png',
+    imagem: 'assets/drinks-bar.png',
     produtos: [
       produto('assets/drinks.png', 'Caipirinha', '15,00'),
       produto('assets/drinks.png', 'Nevada', '15,00'),
@@ -98,7 +98,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Combo',
-    imagem: 'assets/combo.png',
+    imagem: 'assets/combo-drinks.png',
     produtos: criarProdutos('assets/combo.png', 'Combo', '119,90'),
   },
   {
@@ -133,7 +133,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Cachaça',
-    imagem: 'assets/copao.png',
+    imagem: 'assets/cachaca.png',
     produtos: [
       produto('assets/copao.png', 'Velho Barreiro', '4,00'),
       produto('assets/copao.png', 'Velho Barreiro com Limão', '5,00'),
@@ -146,7 +146,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Vinho',
-    imagem: 'assets/combo.png',
+    imagem: 'assets/vinho.png',
     produtos: [
       produto('assets/combo.png', 'Vinho Chalise', '17,00'),
       produto('assets/combo.png', 'Vinho São Tomé', '25,00'),
@@ -158,7 +158,7 @@ const CARDAPIO = [
   },
   {
     categoria: 'Licor',
-    imagem: 'assets/campari.png',
+    imagem: 'assets/licor.png',
     produtos: [
       produto('assets/campari.png', 'Sabores de Licor', '10,00', 'Dose'),
       produto('assets/campari.png', 'Dom Taparro', '80,00', 'Garrafa'),
