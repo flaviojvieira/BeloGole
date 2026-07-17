@@ -1199,15 +1199,6 @@ nav a:hover {
     min-width: 0;
   }
 
-  .card img {    
-    width: 100%;
-    height: auto;
-    min-height: 0;    
-    object-fit: contain;
-    display: block;
-    background: #fff;
-  }
-
   .group .card:nth-child(n+7) {
     display: flex;
     

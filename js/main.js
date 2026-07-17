@@ -124,9 +124,10 @@ function usaSubmenu(categoria, grupos) {
 }
 
 function criarSubcategoriaCard(categoria, grupo) {
+  const imagem = (categoria.subImagens && categoria.subImagens[grupo.titulo]) || categoria.imagem;
   return `
     <button type="button" class="subcategoria-card" data-sub="${grupo.titulo}">
-      <img src="${categoria.imagem}" alt="${grupo.titulo}" loading="lazy">
+      <img src="${imagem}" alt="${grupo.titulo}" loading="lazy">
       <span>${grupo.titulo}</span>
     </button>`;
 }
